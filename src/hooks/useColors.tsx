@@ -12,6 +12,7 @@ type Colors = {
   bgHover: string;
   divider: string;
   color: string;
+  switchColor: string;
   primary: string;
   secondary: string;
   tertiary: string;
@@ -36,6 +37,7 @@ export function ColorsProvider({ children }: ColorsProviderProps) {
   const bgHover = useColorModeValue("white", "gray.800");
   const divider = useColorModeValue("gray.400", "gray.200");
   const color = useColorModeValue("gray.800", "white");
+  const switchColor = useColorModeValue("#20A1C1", "#1D282C");
   const primary = "red.700";
   const secondary = "yellow.800";
   const tertiary = "green.700";
@@ -46,6 +48,7 @@ export function ColorsProvider({ children }: ColorsProviderProps) {
       bgHover,
       divider,
       color,
+      switchColor,
       primary,
       secondary,
       tertiary,
