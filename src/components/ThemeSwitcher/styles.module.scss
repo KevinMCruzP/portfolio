@@ -1,24 +1,24 @@
 .themeSwitcher {
-  transition: width 0.3s;
-
-  .hoverDarkButton {
-    transition: width 2s, height 2s;
-  }
 
   .hoverLightButton {
-    transition: width 2s, height 2s;
+    transition: width 0.3s;
   }
 
+  .hoverDarkButton {
+    transition: width 0.3s;
+  }
 
   :hover {
-    .hoverDarkButton {
-      width:40px;
-      height: 40px;
-    }
-    
     .hoverLightButton {
-      width:40px;
-      height: 40px;
+      width:45px;
+    }
+
+    .hoverDarkButton {
+      width:45px;
     }
   }
+
+
+  
 }
+
