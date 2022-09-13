@@ -1,15 +1,33 @@
 import { Flex } from "@chakra-ui/react";
 import type { NextPage } from "next";
+import { GetServerSideProps } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Header } from "../components/Header";
 import { useColors } from "../hooks/useColors";
 
 const Home: NextPage = () => {
   const { colors } = useColors();
+
+  const { t } = useTranslation();
+
   return (
-    <Flex width={"100vw"} height={"100vh"} bg={colors.bg}>
+    <Flex width={"100vw"} height={"100vh"} bg={colors.bg} flexDir="column">
       <Header />
+      <h1>{t("hello")}</h1>
     </Flex>
   );
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(String(ctx.locale), [
+        "common",
+        "footer",
+      ])),
+    },
+  };
+};
