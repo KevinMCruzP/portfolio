@@ -1,8 +1,9 @@
-import { Flex, Select } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useColors } from "../../hooks/useColors";
+import { SelectLanguage } from "../SelectLanguage";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 
 export function Header() {
@@ -20,16 +21,27 @@ export function Header() {
 
   return (
     <Flex
-      w={"100vw"}
+      w="100%"
       h="60px"
       align="center"
       justify="flex-end"
       bg={colors.bgHover}
       p={2}
-      gap={4}
+      gap={5}
+      color={colors.color}
     >
-      <Select
-        width="80px"
+      <Flex flex={1} justifyContent="space-between">
+        <Flex>
+          <Text>Kevin Cruz</Text>
+        </Flex>
+        <Flex color="#d1cfcf" gap={5}>
+          <Text>About</Text>
+          <Text>Portfolio</Text>
+          <Text>Contact</Text>
+        </Flex>
+      </Flex>
+      {/* <Select
+        width="75px"
         size="xs"
         onChange={(e) => {
           handleChangeLanguage(e.target.value);
@@ -45,7 +57,8 @@ export function Header() {
             );
           }
         })}
-      </Select>
+      </Select> */}
+      <SelectLanguage />
       <ThemeSwitcher />
     </Flex>
   );
