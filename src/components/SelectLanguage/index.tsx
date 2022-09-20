@@ -10,12 +10,13 @@ import {
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Flag from "react-flagkit";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useColors } from "../../hooks/useColors";
 
 export function SelectLanguage() {
   const router = useRouter();
-  const { t, i18n } = useTranslation("select-language");
+  const { t, i18n } = useTranslation("header");
 
   const { colors } = useColors();
 
@@ -48,11 +49,13 @@ export function SelectLanguage() {
                 {t("languages")}
               </Text>
               <Text align="start" fontSize={15}>
-                {language === "pt-BR"
-                  ? "pt-BR"
-                  : language === "en"
-                  ? "en"
-                  : language === "es" && "es"}
+                {language === "pt-BR" ? (
+                  <Flag country="BR" size={20} />
+                ) : language === "en" ? (
+                  <Flag country="US" size={20} />
+                ) : (
+                  language === "es" && <Flag country="CL" size={20} />
+                )}
               </Text>
             </Flex>
           </MenuButton>
@@ -67,22 +70,28 @@ export function SelectLanguage() {
               px={4}
               _hover={{ bg: `${colors.bg}` }}
               onClick={() => handleSelectLanguage("pt-BR")}
+              justifyContent="space-between"
             >
               <Text>pt-BR</Text>
+              <Flag country="BR" size={22} />
             </MenuItem>
             <MenuItem
               px={4}
               _hover={{ bg: `${colors.bg}` }}
               onClick={() => handleSelectLanguage("es")}
+              justifyContent="space-between"
             >
               <Text>es</Text>
+              <Flag country="CL" size={22} />
             </MenuItem>
             <MenuItem
               px={4}
               _hover={{ bg: `${colors.bg}` }}
               onClick={() => handleSelectLanguage("en")}
+              justifyContent="space-between"
             >
               <Text>en</Text>
+              <Flag country="US" size={22} />
             </MenuItem>
           </MenuList>
         </>
