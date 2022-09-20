@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     props: {
       ...(await serverSideTranslations(String(ctx.locale), [
         "common",
-        "footer",
+        "header",
       ])),
     },
   };

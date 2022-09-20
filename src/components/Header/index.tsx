@@ -8,16 +8,11 @@ import { ThemeSwitcher } from "../ThemeSwitcher";
 
 export function Header() {
   const { colors } = useColors();
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("header");
   const [language, setLanguage] = useState(i18n.language);
   const router = useRouter();
 
   const languages = ["en", "pt-BR", "es"];
-
-  function handleChangeLanguage(language: string) {
-    setLanguage(language);
-    router.push(router.asPath, undefined, { locale: language });
-  }
 
   return (
     <Flex
@@ -34,30 +29,12 @@ export function Header() {
         <Flex>
           <Text>Kevin Cruz</Text>
         </Flex>
-        <Flex color="#d1cfcf" gap={5}>
-          <Text>About</Text>
-          <Text>Portfolio</Text>
-          <Text>Contact</Text>
+        <Flex gap={5}>
+          <Text>{t("about")}</Text>
+          <Text>{t("portfolio")}</Text>
+          <Text>{t("contact")}</Text>
         </Flex>
       </Flex>
-      {/* <Select
-        width="75px"
-        size="xs"
-        onChange={(e) => {
-          handleChangeLanguage(e.target.value);
-        }}
-      >
-        <option value={i18n.language}>{i18n.language}</option>
-        {languages.map((lng: string) => {
-          if (lng !== i18n.language) {
-            return (
-              <option key={lng} value={lng}>
-                {lng}
-              </option>
-            );
-          }
-        })}
-      </Select> */}
       <SelectLanguage />
       <ThemeSwitcher />
     </Flex>
