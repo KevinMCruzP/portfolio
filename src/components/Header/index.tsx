@@ -21,7 +21,6 @@ export function Header() {
       align="center"
       justify="flex-end"
       bg={colors.bgHover}
-      p={2}
       gap={5}
       color={colors.color}
     >

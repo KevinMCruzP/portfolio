@@ -14,7 +14,14 @@ const Home: NextPage = () => {
 
   return (
     <Flex flexDir="column" w="100%" color={colors.color}>
-      <Flex width="100%" height="100vh" bg={colors.bg} flexDir="column">
+      <Flex
+        width="95%"
+        height="100vh"
+        bg={colors.bg}
+        flexDir="column"
+        marginLeft="auto"
+        marginRight="auto"
+      >
         <Header />
         <Main />
       </Flex>
