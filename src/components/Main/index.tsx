@@ -1,31 +1,65 @@
-import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, keyframes, Text } from "@chakra-ui/react";
 import { Profile } from "../../assets/Profile";
 
 export function Main() {
+  const animationKeyFrames = keyframes`
+  0% { background-position: 0% }
+  100% { background-position: 400% }
+`;
+
+  const animation = `${animationKeyFrames} 10s linear infinite`;
+
   return (
-    <Grid flex={1} templateColumns="repeat(2, 1fr)">
+    <Grid flex={1} templateColumns="repeat(2, 1fr)" alignContent="center">
       <GridItem>
-        <Flex height="400px" width="350px">
-          <Profile />
+        <Flex flex="1" justifyContent="center" alignContent="center">
+          <Flex height="400px" width="350px">
+            <Profile />
+          </Flex>
         </Flex>
       </GridItem>
       <GridItem flexDir="column">
-        <Flex flexDir="column" w="-webkit-max-content" textAlign="justify">
-          <Text fontSize="4rem" fontWeight="bold" letterSpacing="0.75rem">
-            SOFTWARE
-          </Text>
-          <Text fontSize="2.5rem" fontWeight="bold" letterSpacing="1.25rem">
-            DEVELOPER
-          </Text>
-          <Text
-            boxSize="-moz-fit-content"
-            fontSize="2.1rem"
-            fontWeight="light"
+        <Flex flex="1">
+          <Flex
+            flexDir="column"
             w="-webkit-max-content"
             textAlign="justify"
+            alignContent="center"
           >
-            FRONTEND & BACKEND
-          </Text>
+            <Text
+              bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
+              bgClip="text"
+              animation={animation}
+              bgSize="400%"
+              fontSize="4rem"
+              fontWeight="bold"
+              letterSpacing="0.75rem"
+            >
+              SOFTWARE
+            </Text>
+            <Text
+              bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
+              bgClip="text"
+              animation={animation}
+              bgSize="400%"
+              fontSize="2.5rem"
+              fontWeight="bold"
+              letterSpacing="1.25rem"
+            >
+              DEVELOPER
+            </Text>
+            <Text
+              bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
+              bgClip="text"
+              animation={animation}
+              bgSize="400%"
+              fontSize="2.1rem"
+              fontWeight="light"
+              letterSpacing="1rem"
+            >
+              FULLSTACK
+            </Text>
+          </Flex>
         </Flex>
       </GridItem>
     </Grid>

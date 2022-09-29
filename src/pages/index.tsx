@@ -13,11 +13,10 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex flexDir="column" w="100%" color={colors.color}>
+    <Flex flexDir="column" w="100%" color={colors.color} bg={colors.bg}>
       <Flex
         width="95%"
         height="100vh"
-        bg={colors.bg}
         flexDir="column"
         marginLeft="auto"
         marginRight="auto"
