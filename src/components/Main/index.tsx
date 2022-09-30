@@ -1,4 +1,9 @@
 import { Flex, Grid, GridItem, keyframes, Text } from "@chakra-ui/react";
+import {
+  RiGithubFill,
+  RiInstagramFill,
+  RiLinkedinBoxFill,
+} from "react-icons/ri";
 import { Profile } from "../../assets/Profile";
 
 export function Main() {
@@ -10,7 +15,21 @@ export function Main() {
   const animation = `${animationKeyFrames} 10s linear infinite`;
 
   return (
-    <Grid flex={1} templateColumns="repeat(2, 1fr)" alignContent="center">
+    <Grid
+      flex={1}
+      templateColumns="50px repeat(2, 1fr)"
+      alignContent="center"
+      bgImage="url('/Abstract.svg')"
+      bgPosition="center"
+      bgRepeat="repeat"
+    >
+      <GridItem>
+        <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
+          <RiLinkedinBoxFill size="30px" />
+          <RiGithubFill size="30px" />
+          <RiInstagramFill size="30px" />
+        </Flex>
+      </GridItem>
       <GridItem>
         <Flex flex="1" justifyContent="center" alignContent="center">
           <Flex height="400px" width="350px">

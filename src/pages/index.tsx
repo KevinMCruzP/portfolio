@@ -24,7 +24,13 @@ const Home: NextPage = () => {
         <Header />
         <Main />
       </Flex>
-      <Flex width="100%" height="100vh" bg="white"></Flex>
+      <Flex
+        width="100%"
+        height="100vh"
+        bg="white"
+        bgImage="url('/Abstract.svg')"
+        bgRepeat="repeat"
+      ></Flex>
       <Flex width="100%" height="100vh" bg="red"></Flex>
     </Flex>
   );
