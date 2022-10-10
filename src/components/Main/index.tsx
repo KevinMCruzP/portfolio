@@ -1,4 +1,11 @@
-import { Flex, Grid, GridItem, keyframes, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Grid,
+  GridItem,
+  keyframes,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import {
   RiGithubFill,
   RiInstagramFill,
@@ -12,73 +19,74 @@ export function Main() {
   100% { background-position: 400% }
 `;
 
+  const isPhoneVersion = useBreakpointValue({ base: true, md: false });
+
   const animation = `${animationKeyFrames} 10s linear infinite`;
 
   return (
     <Grid
       flex={1}
-      templateColumns="50px repeat(2, 1fr)"
+      templateColumns={isPhoneVersion ? "50px 1fr" : "50px repeat(2, 1fr)"}
+      templateRows={isPhoneVersion ? "repeat(2, 1fr)" : "none"}
       alignContent="center"
-      bgImage="url('/Abstract.svg')"
-      bgPosition="center"
-      bgRepeat="repeat"
     >
-      <GridItem>
+      <GridItem rowSpan={2}>
         <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
           <RiLinkedinBoxFill size="30px" />
           <RiGithubFill size="30px" />
           <RiInstagramFill size="30px" />
         </Flex>
       </GridItem>
-      <GridItem>
-        <Flex flex="1" justifyContent="center" alignContent="center">
-          <Flex height="400px" width="350px">
-            <Profile />
-          </Flex>
+
+      <GridItem display="flex" justifyContent="center" alignContent="center">
+        <Flex
+          height={["200px", "300px", "400px"]}
+          width={["200px", "300px", "400px"]}
+        >
+          <Profile />
         </Flex>
       </GridItem>
-      <GridItem flexDir="column">
-        <Flex flex="1">
-          <Flex
-            flexDir="column"
-            w="-webkit-max-content"
-            textAlign="justify"
-            alignContent="center"
+
+      <GridItem
+        display="flex"
+        alignItems={isPhoneVersion ? "flex-start" : "center"}
+        justifyContent={isPhoneVersion ? "center" : "none"}
+        gap={2}
+      >
+        <Flex flexDir="column" w="-webkit-max-content">
+          <Text
+            bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
+            bgClip="text"
+            animation={animation}
+            bgSize="400%"
+            fontSize={["2rem", "3rem", "4rem"]}
+            fontWeight="bold"
+            letterSpacing="0.75rem"
           >
-            <Text
-              bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
-              bgClip="text"
-              animation={animation}
-              bgSize="400%"
-              fontSize="4rem"
-              fontWeight="bold"
-              letterSpacing="0.75rem"
-            >
-              SOFTWARE
-            </Text>
-            <Text
-              bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
-              bgClip="text"
-              animation={animation}
-              bgSize="400%"
-              fontSize="2.5rem"
-              fontWeight="bold"
-              letterSpacing="1.25rem"
-            >
-              DEVELOPER
-            </Text>
-            <Text
-              bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
-              bgClip="text"
-              animation={animation}
-              bgSize="400%"
-              fontSize="2.1rem"
-              fontWeight="light"
-              letterSpacing="1rem"
-            >
-              FULLSTACK
-            </Text>
-          </Flex>
+            SOFTWARE
+          </Text>
+          <Text
+            bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
+            bgClip="text"
+            animation={animation}
+            bgSize="400%"
+            fontSize={["1.8rem", "2.8rem", "3.8rem"]}
+            fontWeight="semibold"
+            letterSpacing="0.68rem"
+          >
+            DEVELOPER
+          </Text>
+          <Text
+            bgGradient="linear(to-r, #ff0000, #ffff00,#ff00f3,#0033ff,#ff00c4, #ff0000)"
+            bgClip="text"
+            animation={animation}
+            bgSize="400%"
+            fontSize={["1.6rem", "2.6rem", "3.6rem"]}
+            fontWeight="light"
+            letterSpacing="0.87rem"
+          >
+            FULLSTACK
+          </Text>
         </Flex>
       </GridItem>
     </Grid>

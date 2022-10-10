@@ -18,23 +18,21 @@ export function ThemeSwitcher({ color = "white" }: ThemeSwitcherProps) {
       <IconButton
         icon={
           colorMode === "light" ? (
-            <Flex alignItems={"center"}>
+            <Flex alignItems={"center"} bg={colors.switchColor}>
               <Flex
                 w="85px"
                 justifyContent="center"
                 className={styles.hoverLightButton}
               >
-                <Flex>
-                  <WiCloud color="white" size="22px" />
-                  <RiSunLine color="#fbc02d" size="22px" />
-                </Flex>
+                <WiCloud color="white" size="22px" />
+                <RiSunLine color="#fbc02d" size="22px" />
               </Flex>
 
               {/* Hover button light mode */}
               <Flex
                 align={"center"}
                 borderRadius={"50%"}
-                bg={"#1D282C"}
+                bg={"#070907"}
                 boxSize={"40px"}
               >
                 <RiMoonLine color="#C9D7D8" size="22px" />
@@ -42,7 +40,7 @@ export function ThemeSwitcher({ color = "white" }: ThemeSwitcherProps) {
               </Flex>
             </Flex>
           ) : (
-            <Flex alignItems={"center"}>
+            <Flex alignItems={"center"} bg={colors.switchColor}>
               {/* Hover button dark mode */}
               <Flex
                 align={"center"}
@@ -57,7 +55,6 @@ export function ThemeSwitcher({ color = "white" }: ThemeSwitcherProps) {
                 w="85px"
                 justifyContent="center"
                 className={styles.hoverDarkButton}
-                margin="0 auto"
               >
                 <RiMoonLine color="#C9D7D8" size="22px" />
                 <WiStars color="white" size="22px" />
@@ -68,12 +65,10 @@ export function ThemeSwitcher({ color = "white" }: ThemeSwitcherProps) {
         className={styles.themeSwitcher}
         variant="switchTheme"
         aria-label="Color mode switcher"
-        colorScheme="whiteAlpha"
         borderRadius={50}
         width="85px"
         maxWidth="85px"
         height="40px"
-        bg={colors.switchColor}
         overflow="hidden"
         onClick={toggleColorMode}
         _hover={{ bg: colors.switchColor }}

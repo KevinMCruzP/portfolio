@@ -20,6 +20,9 @@ const Home: NextPage = () => {
         flexDir="column"
         marginLeft="auto"
         marginRight="auto"
+        bgImage="url('/Abstract.svg')"
+        bgPosition="center"
+        bgRepeat="repeat"
       >
         <Header />
         <Main />

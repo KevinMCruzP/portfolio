@@ -6,6 +6,7 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
@@ -17,10 +18,9 @@ import { useColors } from "../../hooks/useColors";
 export function SelectLanguage() {
   const router = useRouter();
   const { t, i18n } = useTranslation("header");
-
   const { colors } = useColors();
-
   const [language, setLanguage] = useState<string>(i18n.language);
+  const isPhoneVersion = useBreakpointValue({ base: true, md: false });
 
   function handleSelectLanguage(language: string) {
     setLanguage(language);
@@ -37,11 +37,11 @@ export function SelectLanguage() {
             as={Button}
             fontSize={15}
             fontWeight="normal"
-            width="8rem"
+            width={["6rem", "6rem", "8rem"]}
             variant="filled"
             bg={colors.bgHover}
             size="md"
-            rightIcon={<RiArrowDownSLine />}
+            rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
             zIndex="1"
           >
             <Flex flexDir="column" gap="5px">
@@ -63,6 +63,7 @@ export function SelectLanguage() {
           <MenuList
             bg={colors.bgHover}
             maxH="260px"
+            minW={["100px", "100px", "150px"]}
             overflow="auto"
             fontSize={13}
           >

@@ -37,7 +37,7 @@ export function ColorsProvider({ children }: ColorsProviderProps) {
   const bgHover = useColorModeValue("white", "gray.800");
   const divider = useColorModeValue("gray.400", "gray.200");
   const color = useColorModeValue("gray.800", "white");
-  const switchColor = useColorModeValue("#20A1C1", "#1D282C");
+  const switchColor = useColorModeValue("#20A1C1", "#070809");
   const primary = "red.700";
   const secondary = "yellow.800";
   const tertiary = "green.700";

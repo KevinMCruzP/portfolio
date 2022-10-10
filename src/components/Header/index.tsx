@@ -1,7 +1,5 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { useState } from "react";
 import { useColors } from "../../hooks/useColors";
 import { SelectLanguage } from "../SelectLanguage";
 import { ThemeSwitcher } from "../ThemeSwitcher";
@@ -9,10 +7,7 @@ import { ThemeSwitcher } from "../ThemeSwitcher";
 export function Header() {
   const { colors } = useColors();
   const { t, i18n } = useTranslation("header");
-  const [language, setLanguage] = useState(i18n.language);
-  const router = useRouter();
-
-  const languages = ["en", "pt-BR", "es"];
+  const isPhoneVersion = useBreakpointValue({ base: true, md: false });
 
   return (
     <Flex
@@ -20,7 +15,6 @@ export function Header() {
       h="60px"
       align="center"
       justify="flex-end"
-      bg={colors.bgHover}
       gap={5}
       color={colors.color}
     >
