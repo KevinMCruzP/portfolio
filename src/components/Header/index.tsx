@@ -22,11 +22,9 @@ export function Header() {
   return (
     <Flex
       w="100%"
-      h="60px"
       align="center"
       justify="flex-end"
       color={colors.color}
-      bg={colors.subBg}
       position="sticky"
       top={0}
       zIndex="1"
@@ -34,52 +32,47 @@ export function Header() {
       pt={["5px", "5px", "15px"]}
       pr={["5px", "5px", "20px"]}
     >
-      <Flex flex={1} justifyContent="space-between">
-        <Flex>
-          <Text>Kevin Cruz</Text>
-        </Flex>
-        <HStack
-          spacing={[4, 4, 4, 6, 8]}
-          fontSize={["sm", "md", "md", "md", "lg"]}
-          fontWeight="medium"
-        >
-          <Text cursor="pointer">
-            <Link href="/">
-              <ChakraLink
-                borderBottom={asPath === "/" ? "3px solid #7928CA" : ""}
-                transition="0.2s filter"
-                _hover={{ filter: "brightness(1.2)" }}
-              >
-                {t("home")}
-              </ChakraLink>
-            </Link>
-          </Text>
+      <HStack
+        spacing={[4, 4, 4, 6, 8]}
+        fontSize={["sm", "md", "md", "md", "lg"]}
+        fontWeight="medium"
+      >
+        <Text cursor="pointer">
+          <Link href="/">
+            <ChakraLink
+              borderBottom={asPath === "/" ? "3px solid #7928CA" : ""}
+              transition="0.2s filter"
+              _hover={{ filter: "brightness(1.2)" }}
+            >
+              {t("home")}
+            </ChakraLink>
+          </Link>
+        </Text>
 
-          <Text cursor="pointer">
-            <Link href="/about">
-              <ChakraLink
-                borderBottom={asPath === "/about" ? "3px solid #7928CA" : ""}
-                transition="0.2s filter"
-                _hover={{ filter: "brightness(1.2)" }}
-              >
-                {t("about")}
-              </ChakraLink>
-            </Link>
-          </Text>
+        <Text cursor="pointer">
+          <Link href="/about">
+            <ChakraLink
+              borderBottom={asPath === "/about" ? "3px solid #7928CA" : ""}
+              transition="0.2s filter"
+              _hover={{ filter: "brightness(1.2)" }}
+            >
+              {t("about")}
+            </ChakraLink>
+          </Link>
+        </Text>
 
-          <Text cursor="pointer">
-            <Link href="/projects">
-              <ChakraLink
-                borderBottom={asPath === "/projects" ? "3px solid #7928CA" : ""}
-                transition="0.2s filter"
-                _hover={{ filter: "brightness(1.2)" }}
-              >
-                {t("projects")}
-              </ChakraLink>
-            </Link>
-          </Text>
-        </HStack>
-      </Flex>
+        <Text cursor="pointer">
+          <Link href="/projects">
+            <ChakraLink
+              borderBottom={asPath === "/projects" ? "3px solid #7928CA" : ""}
+              transition="0.2s filter"
+              _hover={{ filter: "brightness(1.2)" }}
+            >
+              {t("projects")}
+            </ChakraLink>
+          </Link>
+        </Text>
+      </HStack>
       <SelectLanguage />
       <ThemeSwitcher />
     </Flex>

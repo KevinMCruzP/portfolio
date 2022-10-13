@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             bgSize="400%"
             fontSize={["1.8rem", "2.8rem", "2.8rem", "3.8rem"]}
             fontWeight="semibold"
-            letterSpacing="0.68rem"
+            letterSpacing={["0.73rem", "0.7rem", "0.7rem", "0.69rem"]}
           >
             DEVELOPER
           </Text>

@@ -1,4 +1,4 @@
-import { Flex, Tooltip } from "@chakra-ui/react";
+import { Flex, Text, Tooltip } from "@chakra-ui/react";
 import Link from "next/link";
 import { Icons } from "../../assets/Icons";
 import { useColors } from "../../hooks/useColors";
@@ -13,12 +13,15 @@ export function Sidebar() {
   const { colors } = useColors();
   return (
     <Flex
-      h="calc(100vh - 60px)"
-      bg={colors.bg}
+      h="100%"
       color={colors.color}
       position="sticky"
       top="0"
+      flexDir="column"
+      justifyContent="flex-start"
+      alignItems="center"
     >
+      <Text pt={["5px", "5px", "15px"]}>Kevin</Text>
       <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
         <Tooltip
           label="Linkedin"

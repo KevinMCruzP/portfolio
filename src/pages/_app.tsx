@@ -15,14 +15,18 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Flex
           w="100vw"
           h="100vh"
+          pl={["5px", "5px", "20px"]}
           bgImage={"url(/Background.svg)"}
           bgPosition="center"
           bgRepeat="repeat"
           overflow="hidden"
         >
-          <Flex flexDir="column" w="95%" marginX="auto">
+          <Sidebar />
+
+          <Flex flex="1" flexDir="column">
             <Header />
             <Flex
+              flex="1"
               overflowY="auto"
               css={{
                 "::-webkit-scrollbar": {
@@ -40,7 +44,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                 },
               }}
             >
-              <Sidebar />
               <Component {...pageProps} />
             </Flex>
           </Flex>
