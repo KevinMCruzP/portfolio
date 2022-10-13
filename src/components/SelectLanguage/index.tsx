@@ -37,17 +37,25 @@ export function SelectLanguage() {
             as={Button}
             fontSize={15}
             fontWeight="normal"
-            width={["6rem", "6rem", "8rem"]}
+            width={["auto", "auto", "6rem", "8rem"]}
+            minW="3.3rem"
             variant="filled"
-            bg={colors.bgHover}
+            bg={colors.subBg}
+            _hover={{
+              borderColor: "#7928CA",
+            }}
+            border="solid 1px #29214e"
             size="md"
             rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
             zIndex="1"
           >
             <Flex flexDir="column" gap="5px">
-              <Text align="start" fontSize={10} color={colors.color}>
-                {t("languages")}
-              </Text>
+              {!isPhoneVersion && (
+                <Text align="start" fontSize={10} color={colors.color}>
+                  {t("languages")}
+                </Text>
+              )}
+
               <Text align="start" fontSize={15}>
                 {language === "pt-BR" ? (
                   <Flag country="BR" size={20} />
@@ -61,33 +69,48 @@ export function SelectLanguage() {
           </MenuButton>
 
           <MenuList
-            bg={colors.bgHover}
+            bg={colors.subBg}
             maxH="260px"
             minW={["100px", "100px", "150px"]}
             overflow="auto"
             fontSize={13}
+            border="solid 1px #29214e"
           >
             <MenuItem
-              px={4}
-              _hover={{ bg: `${colors.bg}` }}
+              px={3}
+              borderLeft="solid 2px transparent"
+              _hover={{
+                borderLeftColor: "#7928CA",
+                bg: "none",
+              }}
               onClick={() => handleSelectLanguage("pt-BR")}
               justifyContent="space-between"
             >
               <Text>pt-BR</Text>
               <Flag country="BR" size={22} />
             </MenuItem>
+
             <MenuItem
-              px={4}
-              _hover={{ bg: `${colors.bg}` }}
+              px={3}
+              borderLeft="solid 2px transparent"
+              _hover={{
+                borderLeftColor: "#7928CA",
+                bg: "none",
+              }}
               onClick={() => handleSelectLanguage("es")}
               justifyContent="space-between"
             >
               <Text>es</Text>
               <Flag country="CL" size={22} />
             </MenuItem>
+
             <MenuItem
-              px={4}
-              _hover={{ bg: `${colors.bg}` }}
+              px={3}
+              borderLeft="solid 2px transparent"
+              _hover={{
+                borderLeftColor: "#7928CA",
+                bg: "none",
+              }}
               onClick={() => handleSelectLanguage("en")}
               justifyContent="space-between"
             >
