@@ -1,9 +1,15 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Tooltip } from "@chakra-ui/react";
 import Link from "next/link";
 import { Icons } from "../../assets/Icons";
 import { useColors } from "../../hooks/useColors";
 
 export function Sidebar() {
+  const phone = "+56921843543";
+  const urlAPIWhatsapp = `https://api.whatsapp.com/send?phone=${phone}`;
+  const urlLinkedin = "https://www.linkedin.com/in/kevincruzpizarro/";
+  const urlGithub = "https://github.com/KevinMCruzP";
+  const urlInstagram = "https://www.instagram.com/kevin.pizarro.cruz/";
+
   const { colors } = useColors();
   return (
     <Flex
@@ -14,29 +20,69 @@ export function Sidebar() {
       top="0"
     >
       <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
-        <Flex cursor="pointer" maxW="-webkit-max-content">
-          <Link href="https://www.linkedin.com/in/kevincruzpizarro/">
-            <a target="_blank">
-              <Icons.Linkedin size="30px" />
-            </a>
-          </Link>
-        </Flex>
+        <Tooltip
+          label="Linkedin"
+          placement="right"
+          color={colors.color}
+          bg="#29214e"
+          border="1px solid #7928CA"
+        >
+          <Flex>
+            <Link href={urlLinkedin}>
+              <a target="_blank">
+                <Icons.Linkedin size="30px" />
+              </a>
+            </Link>
+          </Flex>
+        </Tooltip>
 
-        <Flex cursor="pointer" maxW="-webkit-max-content">
-          <Link href="https://github.com/KevinMCruzP">
-            <a target="_blank">
-              <Icons.Github size="30px" />
-            </a>
-          </Link>
-        </Flex>
+        <Tooltip
+          label="Github"
+          placement="right"
+          color={colors.color}
+          bg="#29214e"
+          border="1px solid #7928CA"
+        >
+          <Flex>
+            <Link href={urlGithub}>
+              <a target="_blank">
+                <Icons.Github size="30px" />
+              </a>
+            </Link>
+          </Flex>
+        </Tooltip>
 
-        <Flex cursor="pointer" maxW="-webkit-max-content">
-          <Link href="https://www.instagram.com/kevin.pizarro.cruz/">
-            <a target="_blank">
-              <Icons.Instagram size="30px" />
-            </a>
-          </Link>
-        </Flex>
+        <Tooltip
+          label="Instagram"
+          placement="right"
+          color={colors.color}
+          bg="#29214e"
+          border="1px solid #7928CA"
+        >
+          <Flex>
+            <Link href={urlInstagram}>
+              <a target="_blank">
+                <Icons.Instagram size="30px" />
+              </a>
+            </Link>
+          </Flex>
+        </Tooltip>
+
+        <Tooltip
+          label="Whatsapp"
+          placement="right"
+          color={colors.color}
+          bg="#29214e"
+          border="1px solid #7928CA"
+        >
+          <Flex>
+            <Link href={urlAPIWhatsapp}>
+              <a target="_blank">
+                <Icons.Whatsapp size={30} />
+              </a>
+            </Link>
+          </Flex>
+        </Tooltip>
       </Flex>
     </Flex>
   );
