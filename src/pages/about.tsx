@@ -11,12 +11,8 @@ export default function About() {
     <Grid
       flex="1"
       templateColumns="1fr"
-      templateRows="(1fr, 1fr)"
+      templateRows="repeat(3, 1fr)"
       gap={2}
-      bg={colors.bg}
-      bgImage="url('/Background.svg')"
-      bgPosition="center"
-      bgRepeat="repeat"
       color={colors.color}
     >
       <GridItem display="flex" flexDir="column" alignItems="center" gap={2}>
@@ -29,7 +25,7 @@ export default function About() {
         />
 
         <Text fontSize={["md", "lg", "lg", "lg", "2xl"]} fontWeight="medium">
-          Hi, I am Kevin, nice to meet you!
+          🐱‍💻 Hi, I am Kevin, nice to see you!
         </Text>
       </GridItem>
 
@@ -41,40 +37,41 @@ export default function About() {
           fontSize={["xs", "sm", "sm", "sm", "md"]}
         >
           <Text textAlign="center">
-            I am 25 years old and I have been married for 5 years. I was born in
-            Chile, but currently I live in Londrina, Paraná, Brazil. My
-            objetives to 2022 is learn speak English and meet developers of
-            other countries.
-          </Text>
-
-          <Text textAlign="center">
-            I have a license in Computer Engineer and currently working as a
-            Systems Analyst from Aceno Tecnologia.
+            Welcome to my page! I am Kevin Cruz, Fullstack developer from
+            Carambeí, Brasil, currently living in La Serena, Chile.
           </Text>
 
           <Text mt={5} fontWeight="medium">
-            My main functions are:
+            About me:
           </Text>
 
           <Flex flexDir="column">
-            <li>Assist in the specification and documentation of systems</li>
-            <li>Assist in defining tools and technologies</li>
+            <li>🐱 Student and developer front end & back end.</li>
             <li>
-              Assist in defining the APIs of the platform under development
+              🌱 I’m currently studying a computer engineer at Inacap
+              university, Chile.
             </li>
             <li>
-              Elaboration of the visual design of web systems and mobile
-              applications (Android and iOS)
+              💬 I’m currently learning NodeJS, NextJS, MySQL, english...🤣
             </li>
-            <li>Front-end development of web systems</li>
-            <li>Mobile application development for Android and iOS</li>
-            <li>Systems testing and validation</li>
+            <li>🚀 I love innovation and new technologies. </li>
+            <li>🤔 I’m looking to make content in Youtube. </li>
             <li>
-              Work cooperatively with the other members of the company is
-              technical and development team
+              💡 I Speak in Brazilian Portuguese, Spanish and intermediate
+              English.
             </li>
+            <li>👻 Fun fact: I worked as a fisherman and woodwork.</li>
           </Flex>
+        </Flex>
+      </GridItem>
 
+      <GridItem flex="1" display="flex" justifyContent="center" pb={20}>
+        <Flex
+          maxW={["95%", "95%", "80%"]}
+          flexDir="column"
+          gap={2}
+          fontSize={["xs", "sm", "sm", "sm", "md"]}
+        >
           <Text fontWeight="medium">My main tools are:</Text>
 
           <Flex flexDir="column">
