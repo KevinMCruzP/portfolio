@@ -29,14 +29,10 @@ const Home: NextPage = () => {
 
   return (
     <Grid
-      flex={1}
+      flex="1"
       templateColumns={isPhoneVersion ? "1fr" : "repeat(2, 1fr)"}
       templateRows={isPhoneVersion ? "repeat(2, 1fr)" : "none"}
       alignContent="center"
-      bg={colors.bg}
-      bgImage="url('/Background.svg')"
-      bgPosition="center"
-      bgRepeat="repeat"
     >
       <GridItem display="flex" justifyContent="center" alignItems="center">
         <Flex

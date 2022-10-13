@@ -12,11 +12,37 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <ColorsProvider>
-        <Flex flexDir="column" w="95%" marginX="auto">
-          <Header />
-          <Flex>
-            <Sidebar />
-            <Component {...pageProps} />
+        <Flex
+          w="100vw"
+          h="100vh"
+          bgImage={"url(/Background.svg)"}
+          bgPosition="center"
+          bgRepeat="repeat"
+          overflow="hidden"
+        >
+          <Flex flexDir="column" w="95%" marginX="auto">
+            <Header />
+            <Flex
+              overflowY="auto"
+              css={{
+                "::-webkit-scrollbar": {
+                  width: 12,
+                },
+                "::-webkit-scrollbar-track": {
+                  background: "#1b113d",
+                  borderTopRightRadius: 5,
+                  borderBottomRightRadius: 5,
+                },
+                "::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#0c081b",
+                  borderTopRightRadius: 5,
+                  borderBottomRightRadius: 5,
+                },
+              }}
+            >
+              <Sidebar />
+              <Component {...pageProps} />
+            </Flex>
           </Flex>
         </Flex>
       </ColorsProvider>

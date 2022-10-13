@@ -1,5 +1,6 @@
 import {
   Flex,
+  HStack,
   Link as ChakraLink,
   Text,
   useBreakpointValue,
@@ -24,18 +25,24 @@ export function Header() {
       h="60px"
       align="center"
       justify="flex-end"
-      gap={5}
       color={colors.color}
       bg={colors.subBg}
       position="sticky"
       top={0}
       zIndex="1"
+      gap={[0, 2, 2, 4, 6]}
+      pt={["5px", "5px", "15px"]}
+      pr={["5px", "5px", "20px"]}
     >
       <Flex flex={1} justifyContent="space-between">
         <Flex>
           <Text>Kevin Cruz</Text>
         </Flex>
-        <Flex gap={5}>
+        <HStack
+          spacing={[4, 4, 4, 6, 8]}
+          fontSize={["sm", "md", "md", "md", "lg"]}
+          fontWeight="medium"
+        >
           <Text cursor="pointer">
             <Link href="/">
               <ChakraLink
@@ -71,7 +78,7 @@ export function Header() {
               </ChakraLink>
             </Link>
           </Text>
-        </Flex>
+        </HStack>
       </Flex>
       <SelectLanguage />
       <ThemeSwitcher />

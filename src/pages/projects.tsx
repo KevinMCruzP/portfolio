@@ -1,7 +1,6 @@
-import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Link from "next/link";
 import { useColors } from "../hooks/useColors";
 
 export default function Projects() {
@@ -13,13 +12,9 @@ export default function Projects() {
       gap={5}
       minChildWidth={["280px", "300px", "320px", "340px"]}
       p="10px 10px 0 10px"
-      bg={colors.bg}
-      bgImage="url('/Background.svg')"
-      bgPosition="center"
-      bgRepeat="repeat"
     >
       {/* //Linkedin */}
-      <Box borderRadius={8}>
+      {/* <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
           Clone Linkedin
         </Text>
@@ -35,10 +30,10 @@ export default function Projects() {
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
           Working with responsivity with 3 columns.
         </Text>
-      </Box>
+      </Box> */}
 
       {/* //Vercel */}
-      <Box borderRadius={8}>
+      {/* <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
           Clone Vercel
         </Text>
@@ -54,10 +49,10 @@ export default function Projects() {
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
           Handling title effect.
         </Text>
-      </Box>
+      </Box> */}
 
       {/* //Twitter */}
-      <Box borderRadius={8}>
+      {/* <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
           Clone Twitter
         </Text>
@@ -74,10 +69,10 @@ export default function Projects() {
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
           Improved responsivity work with 3 columns.
         </Text>
-      </Box>
+      </Box> */}
 
       {/* //Pinterest */}
-      <Box borderRadius={8}>
+      {/* <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
           Clone Pinterest
         </Text>
@@ -93,10 +88,10 @@ export default function Projects() {
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
           Custom image placement.
         </Text>
-      </Box>
+      </Box> */}
 
       {/* //Mercado Livre */}
-      <Box borderRadius={8}>
+      {/* <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
           Clone Mercado Livre
         </Text>
@@ -112,7 +107,7 @@ export default function Projects() {
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
           Product sales page basics.
         </Text>
-      </Box>
+      </Box> */}
     </SimpleGrid>
   );
 }
