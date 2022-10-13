@@ -9,6 +9,7 @@ import {
 
 type Colors = {
   bg: string;
+  subBg: string;
   bgHover: string;
   divider: string;
   color: string;
@@ -33,7 +34,8 @@ export const ColorsContext = createContext({} as ColorsContextProps);
 export function ColorsProvider({ children }: ColorsProviderProps) {
   const [colors, setColors] = useState({} as Colors);
 
-  const bg = useColorModeValue("gray.50", "gray.900");
+  const bg = useColorModeValue("gray.50", "#050409");
+  const subBg = useColorModeValue("gray.100", "#050409");
   const bgHover = useColorModeValue("white", "gray.800");
   const divider = useColorModeValue("gray.400", "gray.200");
   const color = useColorModeValue("gray.800", "white");
@@ -45,6 +47,7 @@ export function ColorsProvider({ children }: ColorsProviderProps) {
   useEffect(() => {
     const data: Colors = {
       bg,
+      subBg,
       bgHover,
       divider,
       color,
