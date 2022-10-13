@@ -1,4 +1,5 @@
-import { Flex, Text, Tooltip } from "@chakra-ui/react";
+import { Flex, Tooltip } from "@chakra-ui/react";
+import { useKBar } from "kbar";
 import Link from "next/link";
 import { Icons } from "../../assets/Icons";
 import { useColors } from "../../hooks/useColors";
@@ -11,6 +12,7 @@ export function Sidebar() {
   const urlInstagram = "https://www.instagram.com/kevin.pizarro.cruz/";
 
   const { colors } = useColors();
+  const { query } = useKBar();
   return (
     <Flex
       h="100%"
@@ -21,7 +23,10 @@ export function Sidebar() {
       justifyContent="flex-start"
       alignItems="center"
     >
-      <Text pt={["5px", "5px", "15px"]}>Kevin</Text>
+      <Flex as="span" pt="15px">
+        <Icons.Command fontSize={20} onClick={query?.toggle} cursor="pointer" />
+      </Flex>
+
       <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
         <Tooltip
           label="Linkedin"

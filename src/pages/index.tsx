@@ -2,19 +2,23 @@ import {
   Flex,
   Grid,
   GridItem,
+  Kbd,
   keyframes,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { useKBar } from "kbar";
 import type { NextPage } from "next";
 import { GetServerSideProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Icons } from "../assets/Icons";
 import { Profile } from "../assets/Profile";
 import { useColors } from "../hooks/useColors";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+  const { query } = useKBar();
 
   const animationKeyFrames = keyframes`
   0% { background-position: 0% }
@@ -83,6 +87,15 @@ const Home: NextPage = () => {
           >
             FULLSTACK
           </Text>
+
+          <Flex onClick={query?.toggle} cursor="pointer" align="center" gap={2}>
+            <Text fontSize={["xs", "sm", "sm", "sm", "md"]} fontWeight="medium">
+              Press <Kbd bg="#1C1C1C">ctrl</Kbd> + <Kbd bg="#1C1C1C">k</Kbd> to
+              navigate
+            </Text>
+
+            <Icons.Command fontSize={15} />
+          </Flex>
         </Flex>
       </GridItem>
     </Grid>
