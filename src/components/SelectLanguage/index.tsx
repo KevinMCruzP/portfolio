@@ -37,17 +37,17 @@ export function SelectLanguage() {
             as={Button}
             fontSize={15}
             fontWeight="normal"
-            width={["auto", "auto", "6rem", "8rem"]}
-            minW="3.3rem"
+            width="-webkit-max-content"
             variant="filled"
             bg={colors.subBg}
             _hover={{
               borderColor: "#7928CA",
             }}
             border="solid 1px #29214e"
-            size="md"
-            rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
             zIndex="1"
+            rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
+            size={isPhoneVersion ? "0" : "md"}
+            p={isPhoneVersion ? "0" : "10px"}
           >
             <Flex flexDir="column" gap="5px">
               {!isPhoneVersion && (
@@ -56,15 +56,13 @@ export function SelectLanguage() {
                 </Text>
               )}
 
-              <Text align="start" fontSize={15}>
-                {language === "pt-BR" ? (
-                  <Flag country="BR" size={20} />
-                ) : language === "en" ? (
-                  <Flag country="US" size={20} />
-                ) : (
-                  language === "es" && <Flag country="CL" size={20} />
-                )}
-              </Text>
+              {language === "pt-BR" ? (
+                <Flag country="BR" size={20} />
+              ) : language === "en" ? (
+                <Flag country="US" size={20} />
+              ) : (
+                language === "es" && <Flag country="CL" size={20} />
+              )}
             </Flex>
           </MenuButton>
 

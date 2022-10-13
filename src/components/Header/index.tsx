@@ -28,12 +28,12 @@ export function Header() {
       position="sticky"
       top={0}
       zIndex="1"
-      gap={[0, 2, 2, 4, 6]}
+      gap={[2, 2, 4, 6]}
       pt={["5px", "5px", "15px"]}
       pr={["5px", "5px", "20px"]}
     >
       <HStack
-        spacing={[4, 4, 4, 6, 8]}
+        spacing={[2, 4, 6, 8]}
         fontSize={["sm", "md", "md", "md", "lg"]}
         fontWeight="medium"
       >
