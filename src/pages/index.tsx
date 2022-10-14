@@ -8,7 +8,6 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { useKBar } from "kbar";
-import type { NextPage } from "next";
 import { GetServerSideProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -16,7 +15,7 @@ import { Icons } from "../assets/Icons";
 import { Profile } from "../assets/Profile";
 import { useColors } from "../hooks/useColors";
 
-const Home: NextPage = () => {
+export default function Home() {
   const { t } = useTranslation();
   const { query } = useKBar();
 
@@ -100,9 +99,7 @@ const Home: NextPage = () => {
       </GridItem>
     </Grid>
   );
-};
-
-export default Home;
+}
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
