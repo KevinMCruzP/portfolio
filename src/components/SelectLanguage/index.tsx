@@ -55,14 +55,15 @@ export function SelectLanguage() {
                   {t("languages")}
                 </Text>
               )}
-
-              {language === "pt-BR" ? (
-                <Flag country="BR" size={20} />
-              ) : language === "en" ? (
-                <Flag country="US" size={20} />
-              ) : (
-                language === "es" && <Flag country="CL" size={20} />
-              )}
+              <Text align="start">
+                {language === "pt-BR" ? (
+                  <Flag country="BR" size={20} />
+                ) : language === "en" ? (
+                  <Flag country="US" size={20} />
+                ) : (
+                  language === "es" && <Flag country="CL" size={20} />
+                )}
+              </Text>
             </Flex>
           </MenuButton>
 

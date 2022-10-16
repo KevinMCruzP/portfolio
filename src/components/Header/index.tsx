@@ -14,7 +14,7 @@ import { ThemeSwitcher } from "../ThemeSwitcher";
 
 export function Header() {
   const { colors } = useColors();
-  const { t, i18n } = useTranslation("header");
+  const { t } = useTranslation("header");
   const isPhoneVersion = useBreakpointValue({ base: true, md: false });
 
   const { asPath } = useRouter();

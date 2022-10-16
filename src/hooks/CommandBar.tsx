@@ -15,8 +15,7 @@ interface CommandBarProps {
   children: React.ReactNode;
 }
 
-export function CommandBar(props: CommandBarProps) {
-  const { children } = props;
+export function CommandBar({ children }: CommandBarProps) {
   const router = useRouter();
 
   const { colors } = useColors();
