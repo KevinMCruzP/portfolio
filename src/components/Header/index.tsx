@@ -16,7 +16,7 @@ export function Header() {
   const { colors } = useColors();
   const { t } = useTranslation("header");
   const isPhoneVersion = useBreakpointValue({ base: true, md: false });
-
+  const router = useRouter();
   const { asPath } = useRouter();
 
   return (
@@ -38,7 +38,7 @@ export function Header() {
         fontWeight="medium"
       >
         <Text cursor="pointer">
-          <Link href="/">
+          <Link href="/" locale={router.locale}>
             <ChakraLink
               borderBottom={asPath === "/" ? "3px solid #7928CA" : ""}
               transition="0.2s filter"
