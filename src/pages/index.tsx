@@ -10,6 +10,7 @@ import {
 import { useKBar } from "kbar";
 import type { NextPage } from "next";
 import { GetServerSideProps } from "next";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Icons } from "../assets/Icons";
 import { Profile } from "../assets/Profile";
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
   0% { background-position: 0% }
   100% { background-position: 400% }
 `;
+
+  const { t } = useTranslation("home");
 
   const { colors } = useColors();
 
@@ -88,8 +91,8 @@ const Home: NextPage = () => {
 
           <Flex onClick={query?.toggle} cursor="pointer" align="center" gap={2}>
             <Text fontSize={["xs", "sm", "sm", "sm", "md"]} fontWeight="medium">
-              Press <Kbd bg="#1C1C1C">ctrl</Kbd> + <Kbd bg="#1C1C1C">k</Kbd> to
-              navigate
+              {t("press")} <Kbd bg="#1C1C1C">ctrl</Kbd> +
+              <Kbd bg="#1C1C1C">k</Kbd> {t("to_navigate")}
             </Text>
 
             <Icons.Command fontSize={15} />
@@ -105,10 +108,7 @@ export default Home;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
-      ...(await serverSideTranslations(String(ctx.locale), [
-        "common",
-        "header",
-      ])),
+      ...(await serverSideTranslations(String(ctx.locale), ["header", "home"])),
     },
   };
 };
