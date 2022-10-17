@@ -5,8 +5,10 @@ import {
   SimpleGrid,
   Text,
   Tooltip,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 import { Icons } from "../assets/Icons";
@@ -15,70 +17,78 @@ import { useColors } from "../hooks/useColors";
 export default function About() {
   const { colors } = useColors();
 
+  const { t } = useTranslation("about");
+
+  const isPhoneVersion = useBreakpointValue({ base: true, md: false });
+
   return (
     <Grid
       flex="1"
       templateColumns="1fr"
-      templateRows="repeat(2, 1fr)"
-      gap={2}
+      templateRows="repeat(3, 1fr)"
+      gap={5}
       color={colors.color}
     >
-      <GridItem display="flex" flexDir="column" alignItems="center" gap={2}>
-        <Image
-          alt="Profile Image"
-          src="/profile2.png"
-          height="300px"
-          width="250px"
-          layout="fixed"
-        />
+      <GridItem>
+        <Flex
+          flexDir="column"
+          alignItems="center"
+          justifyContent="flex-start"
+          gap={2}
+          maxW="80%"
+          margin="0 auto"
+        >
+          <Image
+            alt="Profile Image"
+            src="/profile2.png"
+            height={isPhoneVersion ? "190px" : "250px"}
+            width={isPhoneVersion ? "190px" : "260px"}
+            layout="fixed"
+          />
 
-        <Text fontSize={["md", "lg", "lg", "lg", "2xl"]} fontWeight="medium">
-          🐱‍💻 Hi, I am Kevin, nice to see you!
-        </Text>
+          <Text fontSize={["md", "lg", "lg", "lg", "2xl"]} fontWeight="medium">
+            🐱‍💻 {t("title")}
+          </Text>
+        </Flex>
       </GridItem>
 
-      <GridItem flex="1" display="flex" justifyContent="center" pb={20}>
+      <GridItem>
         <Flex
-          maxW={["95%", "95%", "80%"]}
+          flex="1"
+          flexDir="column"
+          w="80%"
+          margin="0 auto"
+          justifyContent="flex-start"
+          fontSize={["xs", "sm", "sm", "sm", "md"]}
+          gap={6}
+        >
+          <Text textAlign="center">{t("description")}</Text>
+
+          <Text fontWeight="medium">{t("aboutMe")}</Text>
+
+          <Flex flexDir="column">
+            <li>🐱 {t("list1")}</li>
+            <li>🌱 {t("list2")}</li>
+            <li>💬 {t("list3")}🤣</li>
+            <li>🚀 {t("list4")} </li>
+            <li>🤔 {t("list5")} </li>
+            <li>💡 {t("list6")}</li>
+            <li>👻 {t("list7")} </li>
+          </Flex>
+        </Flex>
+      </GridItem>
+
+      <GridItem>
+        <Flex
+          w={["80%", "70%", "30%"]}
+          margin="0 auto"
           flexDir="column"
           gap={2}
           fontSize={["xs", "sm", "sm", "sm", "md"]}
         >
-          <Text textAlign="center">
-            Welcome to my page! I am Kevin Cruz, Fullstack developer from
-            Carambeí, Brasil, currently living in La Serena, Chile.
-          </Text>
+          <Text fontWeight="medium">{t("tools")}</Text>
 
-          <Text mt={5} fontWeight="medium">
-            About me:
-          </Text>
-
-          <Flex flexDir="column">
-            <li>🐱 Student and developer front end & back end.</li>
-            <li>
-              🌱 I’m currently studying computer engineer at Inacap university,
-              Chile.
-            </li>
-            <li>
-              💬 I’m currently learning NodeJS, NextJS, MySQL, english...🤣
-            </li>
-            <li>🚀 I love innovation and new technologies. </li>
-            <li>🤔 I’m looking to make content in Youtube. </li>
-            <li>
-              💡 I Speak in Brazilian Portuguese, Spanish and intermediate
-              English.
-            </li>
-            <li>👻 Fun fact: I worked as a fisherman and woodwork.</li>
-          </Flex>
-
-          <Text fontWeight="medium">My main tools are:</Text>
-
-          <SimpleGrid
-            color={colors.color}
-            minChildWidth="25px"
-            maxW={["95%", "95%", "70%", "70%"]}
-            gap={2}
-          >
+          <SimpleGrid color={colors.color} minChildWidth="25px" gap={2}>
             <Tooltip
               label="JavaScript"
               placement="top"
@@ -172,8 +182,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       ...(await serverSideTranslations(String(ctx.locale), [
-        "common",
         "header",
+        "about",
       ])),
     },
   };
