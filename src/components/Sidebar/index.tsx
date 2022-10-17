@@ -24,7 +24,7 @@ export function Sidebar() {
       alignItems="center"
     >
       <Flex as="span" pt="15px">
-        <Icons.Command fontSize={20} onClick={query?.toggle} cursor="pointer" />
+        <Icons.Command size="25px" onClick={query?.toggle} cursor="pointer" />
       </Flex>
 
       <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
@@ -38,7 +38,7 @@ export function Sidebar() {
           <Flex>
             <Link href={urlLinkedin}>
               <a target="_blank">
-                <Icons.Linkedin size="30px" />
+                <Icons.Linkedin size="25px" />
               </a>
             </Link>
           </Flex>
@@ -54,7 +54,7 @@ export function Sidebar() {
           <Flex>
             <Link href={urlGithub}>
               <a target="_blank">
-                <Icons.Github size="30px" />
+                <Icons.Github size="25px" />
               </a>
             </Link>
           </Flex>
@@ -70,7 +70,7 @@ export function Sidebar() {
           <Flex>
             <Link href={urlInstagram}>
               <a target="_blank">
-                <Icons.Instagram size="30px" />
+                <Icons.Instagram size="25px" />
               </a>
             </Link>
           </Flex>
@@ -86,7 +86,7 @@ export function Sidebar() {
           <Flex>
             <Link href={urlAPIWhatsapp}>
               <a target="_blank">
-                <Icons.Whatsapp size={30} />
+                <Icons.Whatsapp size="25px" />
               </a>
             </Link>
           </Flex>
