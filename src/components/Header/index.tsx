@@ -38,7 +38,7 @@ export function Header() {
         fontWeight="medium"
       >
         <Text cursor="pointer">
-          <Link href="/" locale={router.locale}>
+          <Link href={`/${router.locale}`} locale={false}>
             <ChakraLink
               borderBottom={asPath === "/" ? "3px solid #7928CA" : ""}
               transition="0.2s filter"
