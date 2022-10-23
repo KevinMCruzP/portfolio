@@ -1,6 +1,7 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Link from "next/link";
 import { useColors } from "../hooks/useColors";
 
 export default function Projects() {
@@ -11,103 +12,53 @@ export default function Projects() {
       flex="1"
       gap={5}
       minChildWidth={["280px", "300px", "320px", "340px"]}
-      p="10px 10px 0 10px"
+      p={["15px", "30px"]}
     >
-      {/* //Linkedin */}
-      {/* <Box borderRadius={8}>
+      {/* //Dashadmin */}
+      <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
-          Clone Linkedin
+          DashAdmin
         </Text>
-        <Link href="https://clone-linkedin-shimmer.netlify.app/" passHref>
+        <Link href="https://dashadmin-kevinmcruzp.vercel.app/" passHref>
           <a target="_blank">
-            <Image
-              src="./images/Linkedin.png"
-              alt="Clone Linkedin"
-              borderRadius="10"
-            />
+            <Image src="./dashadmin.png" alt="DashAdmin" borderRadius="10" />
           </a>
         </Link>
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Working with responsivity with 3 columns.
+          Working with dashboard design, charts, and tables.
         </Text>
-      </Box> */}
+      </Box>
 
-      {/* //Vercel */}
-      {/* <Box borderRadius={8}>
+      {/* //Moveit */}
+      <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
-          Clone Vercel
+          Move it
         </Text>
-        <Link href="https://clone-vercel.netlify.app/" passHref>
+        <Link href="https://moveit-kevinmcruzp.vercel.app/" passHref>
           <a target="_blank">
-            <Image
-              src="./images/Vercel.png"
-              alt="Clone Vercel"
-              borderRadius="10"
-            />
+            <Image src="./moveit.png" alt="MoveIt" borderRadius="10" />
           </a>
         </Link>
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Handling title effect.
+          Notification system to students or workers, to take a break and
+          exercise.
         </Text>
-      </Box> */}
+      </Box>
 
-      {/* //Twitter */}
-      {/* <Box borderRadius={8}>
+      {/* //Feedback */}
+      <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
-          Clone Twitter
+          Feedback
         </Text>
-        <Link href="https://clone-twitter-responsive.netlify.app/" passHref>
+        <Link href="https://nlw-return-react.vercel.app/" passHref>
           <a target="_blank">
-            <Image
-              src="./images/Twitter.png"
-              alt="Clone Twitter"
-              borderRadius="10"
-            />
-          </a>
-        </Link>
-
-        <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Improved responsivity work with 3 columns.
-        </Text>
-      </Box> */}
-
-      {/* //Pinterest */}
-      {/* <Box borderRadius={8}>
-        <Text textAlign="center" pb={1} fontWeight="bold">
-          Clone Pinterest
-        </Text>
-        <Link href="https://clone-pinterest.netlify.app/" passHref>
-          <a target="_blank">
-            <Image
-              src="./images/Pinterest.png"
-              alt="Clone Pinterest"
-              borderRadius="10"
-            />
+            <Image src="./feedback.png" alt="Feedback" borderRadius="10" />
           </a>
         </Link>
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Custom image placement.
+          Feedback messages design.
         </Text>
-      </Box> */}
-
-      {/* //Mercado Livre */}
-      {/* <Box borderRadius={8}>
-        <Text textAlign="center" pb={1} fontWeight="bold">
-          Clone Mercado Livre
-        </Text>
-        <Link href="https://clone-mercado-livre.netlify.app/" passHref>
-          <a target="_blank">
-            <Image
-              src="./images/Mercado_Livre.png"
-              alt="Clone Mercado Livre"
-              borderRadius="10"
-            />
-          </a>
-        </Link>
-        <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Product sales page basics.
-        </Text>
-      </Box> */}
+      </Box>
     </SimpleGrid>
   );
 }

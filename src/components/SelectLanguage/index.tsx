@@ -29,7 +29,7 @@ export function SelectLanguage() {
   }
 
   return (
-    <Menu matchWidth autoSelect={false}>
+    <Menu autoSelect={false}>
       {({ isOpen }) => (
         <>
           <MenuButton
@@ -44,10 +44,10 @@ export function SelectLanguage() {
               borderColor: "#7928CA",
             }}
             border="solid 1px #29214e"
-            zIndex="1"
             rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
             size={isPhoneVersion ? "0" : "md"}
             p={isPhoneVersion ? "0" : "10px"}
+            zIndex="1"
           >
             <Flex flexDir="column" gap="5px">
               {!isPhoneVersion && (
