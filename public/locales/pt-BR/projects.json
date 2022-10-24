@@ -1,0 +1,14 @@
+{
+  "dashAdmin": {
+    "title": "Painel de administração",
+    "description": "Trabalhando com desenho de painel, gráficos e tabelas."
+  },
+  "moveIt": {
+    "title": "Mexa-se",
+    "description": "Sistema de notificação para estudantes ou trabalhadores, para fazer uma pausa e se exercitar."
+  },
+  "feedBack": {
+    "title": "Retroalimentação",
+    "description": "Desenho de sistema de retroalimentação de mensagem"
+  }
+}

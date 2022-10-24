@@ -1,11 +1,17 @@
-import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
+import { DashAdmin } from "../assets/DashAdmin";
+import { Feedback } from "../assets/Feedback";
+import { MoveIt } from "../assets/MoveIt";
 import { useColors } from "../hooks/useColors";
 
 export default function Projects() {
   const { colors } = useColors();
+
+  const { t } = useTranslation("projects");
 
   return (
     <SimpleGrid
@@ -17,46 +23,45 @@ export default function Projects() {
       {/* //Dashadmin */}
       <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
-          DashAdmin
+          {t("dashAdmin.title")}
         </Text>
         <Link href="https://dashadmin-kevinmcruzp.vercel.app/" passHref>
           <a target="_blank">
-            <Image src="./dashadmin.png" alt="DashAdmin" borderRadius="10" />
+            <DashAdmin />
           </a>
         </Link>
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Working with dashboard design, charts, and tables.
+          {t("dashAdmin.description")}
         </Text>
       </Box>
 
       {/* //Moveit */}
       <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
-          Move it
+          {t("moveIt.title")}
         </Text>
         <Link href="https://moveit-kevinmcruzp.vercel.app/" passHref>
           <a target="_blank">
-            <Image src="./moveit.png" alt="MoveIt" borderRadius="10" />
+            <MoveIt />
           </a>
         </Link>
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Notification system to students or workers, to take a break and
-          exercise.
+          {t("moveIt.description")}
         </Text>
       </Box>
 
       {/* //Feedback */}
       <Box borderRadius={8}>
         <Text textAlign="center" pb={1} fontWeight="bold">
-          Feedback
+          {t("feedBack.title")}
         </Text>
         <Link href="https://nlw-return-react.vercel.app/" passHref>
           <a target="_blank">
-            <Image src="./feedback.png" alt="Feedback" borderRadius="10" />
+            <Feedback />
           </a>
         </Link>
         <Text pt={1} fontSize={["xs", "sm", "sm", "sm", "md"]}>
-          Feedback messages design.
+          {t("feedBack.description")}
         </Text>
       </Box>
     </SimpleGrid>
@@ -67,8 +72,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       ...(await serverSideTranslations(String(ctx.locale), [
-        "common",
         "header",
+        "projects",
       ])),
     },
   };

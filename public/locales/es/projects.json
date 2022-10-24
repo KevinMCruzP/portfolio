@@ -1,0 +1,14 @@
+{
+  "dashAdmin": {
+    "title": "Tablero de Administrador",
+    "description": "Trabajando con diseño de tableros, gráficos y tablas."
+  },
+  "moveIt": {
+    "title": "Muévelo",
+    "description": "Sistema de notificación para estudiantes o trabajadores, para tomar un descanso y hacer ejercicio."
+  },
+  "feedBack": {
+    "title": "Retroalimentación",
+    "description": "Diseño de sistema de retroalimentación de mensaje"
+  }
+}

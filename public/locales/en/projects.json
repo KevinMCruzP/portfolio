@@ -1,0 +1,14 @@
+{
+  "dashAdmin": {
+    "title": "Admin Dashboard",
+    "description": "Working with dashboard design, charts and tables."
+  },
+  "moveIt": {
+    "title": "Move It",
+    "description": "Notification system to students or workers, to take a break and exercise."
+  },
+  "feedBack": {
+    "title": "FeedBack",
+    "description": "Message feedback system design."
+  }
+}

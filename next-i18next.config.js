@@ -13,4 +13,5 @@ module.exports = {
     localeDetection: false,
   },
   localePath: path.resolve('./public/locales'),
+  react: { useSuspense: false }
 }
