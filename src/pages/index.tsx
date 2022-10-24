@@ -91,8 +91,8 @@ const Home: NextPage = () => {
 
           <Flex onClick={query?.toggle} cursor="pointer" align="center" gap={2}>
             <Text fontSize={["xs", "sm", "sm", "sm", "md"]} fontWeight="medium">
-              {t("press")} <Kbd bg="#1C1C1C">ctrl</Kbd> +
-              <Kbd bg="#1C1C1C">k</Kbd> {t("to_navigate")}
+              {t("press")} <Kbd bg={colors.bg}>ctrl</Kbd> +
+              <Kbd bg={colors.bg}>k</Kbd> {t("to_navigate")}
             </Text>
 
             <Icons.Command fontSize={15} />

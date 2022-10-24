@@ -1,8 +1,9 @@
-import { Flex, Tooltip } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { useKBar } from "kbar";
 import Link from "next/link";
 import { Icons } from "../../assets/Icons";
 import { useColors } from "../../hooks/useColors";
+import { Tooltip } from "../Tooltip";
 
 export function Sidebar() {
   const phone = "+56921843543";
@@ -28,13 +29,7 @@ export function Sidebar() {
       </Flex>
 
       <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
-        <Tooltip
-          label="Linkedin"
-          placement="right"
-          color={colors.color}
-          bg="#29214e"
-          border="1px solid #7928CA"
-        >
+        <Tooltip label="Linkedin" placement="right">
           <Flex>
             <Link href={urlLinkedin}>
               <a target="_blank">
@@ -44,13 +39,7 @@ export function Sidebar() {
           </Flex>
         </Tooltip>
 
-        <Tooltip
-          label="Github"
-          placement="right"
-          color={colors.color}
-          bg="#29214e"
-          border="1px solid #7928CA"
-        >
+        <Tooltip label="Github" placement="right">
           <Flex>
             <Link href={urlGithub}>
               <a target="_blank">
@@ -60,13 +49,7 @@ export function Sidebar() {
           </Flex>
         </Tooltip>
 
-        <Tooltip
-          label="Instagram"
-          placement="right"
-          color={colors.color}
-          bg="#29214e"
-          border="1px solid #7928CA"
-        >
+        <Tooltip label="Instagram" placement="right">
           <Flex>
             <Link href={urlInstagram}>
               <a target="_blank">
@@ -76,13 +59,7 @@ export function Sidebar() {
           </Flex>
         </Tooltip>
 
-        <Tooltip
-          label="Whatsapp"
-          placement="right"
-          color={colors.color}
-          bg="#29214e"
-          border="1px solid #7928CA"
-        >
+        <Tooltip label="Whatsapp" placement="right">
           <Flex>
             <Link href={urlAPIWhatsapp}>
               <a target="_blank">

@@ -4,7 +4,6 @@ import {
   GridItem,
   SimpleGrid,
   Text,
-  Tooltip,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
@@ -12,6 +11,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 import { Icons } from "../assets/Icons";
+import { Tooltip } from "../components/Tooltip";
 import { useColors } from "../hooks/useColors";
 
 export default function About() {
@@ -89,86 +89,32 @@ export default function About() {
           <Text fontWeight="medium">{t("tools")}</Text>
 
           <SimpleGrid color={colors.color} minChildWidth="25px" gap={2}>
-            <Tooltip
-              label="JavaScript"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="JavaScript" placement="top">
               <Flex>{<Icons.JavaScript color="#EFD81D" size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="TypeScript"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="TypeScript" placement="top">
               <Flex>{<Icons.Typescript color="#2F74C0" size="25px" />}</Flex>
             </Tooltip>
 
-            <Tooltip
-              label="ReactJS"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="ReactJS" placement="top">
               <Flex>{<Icons.React color="#61DAFB" size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="NextJS"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="NextJS" placement="top">
               <Flex>{<Icons.Nextjs size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="NodeJS"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="NodeJS" placement="top">
               <Flex>{<Icons.Nodejs color="#6EA560" size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="Linux"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="Linux" placement="top">
               <Flex>{<Icons.Linux size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="Git"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="Git" placement="top">
               <Flex>{<Icons.Git color="#E84E31" size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="HTML5"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="HTML5" placement="top">
               <Flex>{<Icons.Html5 color="#F16524" size="25px" />}</Flex>
             </Tooltip>
-            <Tooltip
-              label="CSS3"
-              placement="top"
-              color={colors.color}
-              bg="#29214e"
-              border="1px solid #7928CA"
-            >
+            <Tooltip label="CSS3" placement="top">
               <Flex>{<Icons.Css3 color="#00A2D6" size="25px" />}</Flex>
             </Tooltip>
           </SimpleGrid>

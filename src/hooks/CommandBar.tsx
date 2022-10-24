@@ -56,8 +56,9 @@ export function CommandBar({ children }: CommandBarProps) {
                 as={KBarSearch}
                 defaultPlaceholder="Type a command or search"
                 _placeholder={{ color: colors.color }}
-                border="solid 1px #0c081b"
-                focusBorderColor="#1b113d"
+                border="solid 1px"
+                borderColor={colors.tooltipBg}
+                focusBorderColor={colors.tooltipBorder}
                 borderRadius="10px 10px 0 0"
               />
 
@@ -74,6 +75,7 @@ export function CommandBar({ children }: CommandBarProps) {
 
 function RenderResult() {
   const { results } = useMatches();
+  const { colors } = useColors();
 
   return (
     <KBarResults
@@ -86,17 +88,18 @@ function RenderResult() {
         ) : (
           <Flex
             align="center"
-            bg={active ? "#0c081b" : "transparent"}
+            bg={active ? colors.tooltipBg : "transparent"}
             p="5px 10px"
             h="50px"
             cursor="pointer"
             borderRadius={item.id === "projects" ? "0 0 10px 10px" : 0}
             justify="space-between"
+            color={colors.color}
           >
             <Text>{item.name}</Text>
-            {item.id === "home" && <Kbd bg="#0c081b">H</Kbd>}
-            {item.id === "about" && <Kbd bg="#0c081b">A</Kbd>}
-            {item.id === "projects" && <Kbd bg="#0c081b">P</Kbd>}
+            {item.id === "home" && <Kbd bg={colors.tooltipBg}>H</Kbd>}
+            {item.id === "about" && <Kbd bg={colors.tooltipBg}>A</Kbd>}
+            {item.id === "projects" && <Kbd bg={colors.tooltipBg}>P</Kbd>}
           </Flex>
         );
       }}

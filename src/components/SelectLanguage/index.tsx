@@ -39,11 +39,12 @@ export function SelectLanguage() {
             fontWeight="normal"
             width="-webkit-max-content"
             variant="filled"
-            bg={colors.subBg}
+            bg={colors.bg}
             _hover={{
-              borderColor: "#7928CA",
+              borderColor: colors.selectLangPlaceholder,
             }}
-            border="solid 1px #29214e"
+            border={isPhoneVersion ? "none" : "solid 1px"}
+            borderColor={colors.selectLangBorder}
             rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
             size={isPhoneVersion ? "0" : "md"}
             p={isPhoneVersion ? "0" : "10px"}
@@ -73,7 +74,8 @@ export function SelectLanguage() {
             minW={["100px", "100px", "150px"]}
             overflow="auto"
             fontSize={13}
-            border="solid 1px #29214e"
+            border="solid 1px"
+            borderColor={colors.selectLangBorder}
           >
             <MenuItem
               px={3}
