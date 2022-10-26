@@ -24,6 +24,7 @@ export default function Projects() {
       <ProjectItem
         title={t("dashAdmin.title")}
         description={t("dashAdmin.description")}
+        href="https://dashadmin-kevinmcruzp.vercel.app/"
         image={<DashAdmin />}
       />
 
@@ -31,6 +32,7 @@ export default function Projects() {
       <ProjectItem
         title={t("moveIt.title")}
         description={t("moveIt.description")}
+        href="https://moveit-kevinmcruzp.vercel.app/"
         image={<MoveIt />}
       />
 
@@ -38,6 +40,7 @@ export default function Projects() {
       <ProjectItem
         title={t("feedBack.title")}
         description={t("feedBack.description")}
+        href="https://nlw-return-react.vercel.app/"
         image={<Feedback />}
       />
     </SimpleGrid>
