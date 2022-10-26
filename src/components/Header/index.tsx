@@ -1,16 +1,10 @@
-import {
-  Flex,
-  HStack,
-  Link as ChakraLink,
-  Text,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Flex, HStack, useBreakpointValue } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useColors } from "../../hooks/useColors";
 import { SelectLanguage } from "../SelectLanguage";
 import { ThemeSwitcher } from "../ThemeSwitcher";
+import { ActiveLink } from "./Link";
 
 export function Header() {
   const { colors } = useColors();
@@ -37,41 +31,9 @@ export function Header() {
         fontSize={["sm", "md", "md", "md", "lg"]}
         fontWeight="medium"
       >
-        <Text cursor="pointer">
-          <Link href={`/${router.locale}`} locale={false}>
-            <ChakraLink
-              borderBottom={asPath === "/" ? "3px solid #7928CA" : ""}
-              transition="0.2s filter"
-              _hover={{ filter: "brightness(1.2)" }}
-            >
-              {t("home")}
-            </ChakraLink>
-          </Link>
-        </Text>
-
-        <Text cursor="pointer">
-          <Link href="/about">
-            <ChakraLink
-              borderBottom={asPath === "/about" ? "3px solid #7928CA" : ""}
-              transition="0.2s filter"
-              _hover={{ filter: "brightness(1.2)" }}
-            >
-              {t("about")}
-            </ChakraLink>
-          </Link>
-        </Text>
-
-        <Text cursor="pointer">
-          <Link href="/projects">
-            <ChakraLink
-              borderBottom={asPath === "/projects" ? "3px solid #7928CA" : ""}
-              transition="0.2s filter"
-              _hover={{ filter: "brightness(1.2)" }}
-            >
-              {t("projects")}
-            </ChakraLink>
-          </Link>
-        </Text>
+        <ActiveLink href="/">{t("home")}</ActiveLink>
+        <ActiveLink href="/about">{t("about")}</ActiveLink>
+        <ActiveLink href="/projects">{t("projects")}</ActiveLink>
       </HStack>
       <SelectLanguage />
       <ThemeSwitcher />
