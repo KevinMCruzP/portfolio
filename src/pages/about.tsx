@@ -10,6 +10,7 @@ import { GetServerSideProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
+import Profile2 from "../../public/profile2.png";
 import { Icons } from "../assets/Icons";
 import { Tooltip } from "../components/Tooltip";
 import { useColors } from "../hooks/useColors";
@@ -40,7 +41,8 @@ export default function About() {
         >
           <Image
             alt="Profile Image"
-            src="/profile2.png"
+            src={Profile2}
+            placeholder="blur"
             height={isPhoneVersion ? "190px" : "250px"}
             width={isPhoneVersion ? "190px" : "260px"}
             layout="fixed"
@@ -90,32 +92,39 @@ export default function About() {
 
           <SimpleGrid color={colors.color} minChildWidth="25px" gap={2}>
             <Tooltip label="JavaScript" placement="top">
-              <Flex>{<Icons.JavaScript color="#EFD81D" size="25px" />}</Flex>
+              <Icons.JavaScript color="#EFD81D" size="25px" />
             </Tooltip>
+
             <Tooltip label="TypeScript" placement="top">
-              <Flex>{<Icons.Typescript color="#2F74C0" size="25px" />}</Flex>
+              <Icons.Typescript color="#2F74C0" size="25px" />
             </Tooltip>
 
             <Tooltip label="ReactJS" placement="top">
-              <Flex>{<Icons.React color="#61DAFB" size="25px" />}</Flex>
+              <Icons.React color="#61DAFB" size="25px" />
             </Tooltip>
+
             <Tooltip label="NextJS" placement="top">
-              <Flex>{<Icons.Nextjs size="25px" />}</Flex>
+              <Icons.Nextjs size="25px" />
             </Tooltip>
+
             <Tooltip label="NodeJS" placement="top">
-              <Flex>{<Icons.Nodejs color="#6EA560" size="25px" />}</Flex>
+              <Icons.Nodejs color="#6EA560" size="25px" />
             </Tooltip>
+
             <Tooltip label="Linux" placement="top">
-              <Flex>{<Icons.Linux size="25px" />}</Flex>
+              <Icons.Linux size="25px" />
             </Tooltip>
+
             <Tooltip label="Git" placement="top">
-              <Flex>{<Icons.Git color="#E84E31" size="25px" />}</Flex>
+              <Icons.Git color="#E84E31" size="25px" />
             </Tooltip>
+
             <Tooltip label="HTML5" placement="top">
-              <Flex>{<Icons.Html5 color="#F16524" size="25px" />}</Flex>
+              <Icons.Html5 color="#F16524" size="25px" />
             </Tooltip>
+
             <Tooltip label="CSS3" placement="top">
-              <Flex>{<Icons.Css3 color="#00A2D6" size="25px" />}</Flex>
+              <Icons.Css3 color="#00A2D6" size="25px" />
             </Tooltip>
           </SimpleGrid>
         </Flex>

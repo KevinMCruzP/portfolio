@@ -30,43 +30,35 @@ export function Sidebar() {
 
       <Flex gap={4} h="100%" flexDir="column" justifyContent="center">
         <Tooltip label="Linkedin" placement="right">
-          <Flex>
-            <Link href={urlLinkedin}>
-              <a target="_blank">
-                <Icons.Linkedin size="25px" />
-              </a>
-            </Link>
-          </Flex>
+          <Link href={urlLinkedin}>
+            <a target="_blank">
+              <Icons.Linkedin size="25px" />
+            </a>
+          </Link>
         </Tooltip>
 
         <Tooltip label="Github" placement="right">
-          <Flex>
-            <Link href={urlGithub}>
-              <a target="_blank">
-                <Icons.Github size="25px" />
-              </a>
-            </Link>
-          </Flex>
+          <Link href={urlGithub}>
+            <a target="_blank">
+              <Icons.Github size="25px" />
+            </a>
+          </Link>
         </Tooltip>
 
         <Tooltip label="Instagram" placement="right">
-          <Flex>
-            <Link href={urlInstagram}>
-              <a target="_blank">
-                <Icons.Instagram size="25px" />
-              </a>
-            </Link>
-          </Flex>
+          <Link href={urlInstagram}>
+            <a target="_blank">
+              <Icons.Instagram size="25px" />
+            </a>
+          </Link>
         </Tooltip>
 
         <Tooltip label="Whatsapp" placement="right">
-          <Flex>
-            <Link href={urlAPIWhatsapp}>
-              <a target="_blank">
-                <Icons.Whatsapp size="25px" />
-              </a>
-            </Link>
-          </Flex>
+          <Link href={urlAPIWhatsapp}>
+            <a target="_blank">
+              <Icons.Whatsapp size="25px" />
+            </a>
+          </Link>
         </Tooltip>
       </Flex>
     </Flex>

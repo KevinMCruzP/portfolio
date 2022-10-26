@@ -3,7 +3,6 @@ import {
   Flex,
   Menu,
   MenuButton,
-  MenuItem,
   MenuList,
   Text,
   useBreakpointValue,
@@ -14,6 +13,7 @@ import { useState } from "react";
 import Flag from "react-flagkit";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useColors } from "../../hooks/useColors";
+import { MenuItem } from "./MenuItem";
 
 export function SelectLanguage() {
   const router = useRouter();
@@ -78,44 +78,17 @@ export function SelectLanguage() {
             borderColor={colors.selectLangBorder}
           >
             <MenuItem
-              px={3}
-              borderLeft="solid 2px transparent"
-              _hover={{
-                borderLeftColor: "#7928CA",
-                bg: "none",
-              }}
-              onClick={() => handleSelectLanguage("pt-BR")}
-              justifyContent="space-between"
+              handleSelectLanguage={handleSelectLanguage}
+              language="pt-BR"
             >
-              <Text>pt-BR</Text>
               <Flag country="BR" size={22} />
             </MenuItem>
 
-            <MenuItem
-              px={3}
-              borderLeft="solid 2px transparent"
-              _hover={{
-                borderLeftColor: "#7928CA",
-                bg: "none",
-              }}
-              onClick={() => handleSelectLanguage("es")}
-              justifyContent="space-between"
-            >
-              <Text>es</Text>
+            <MenuItem handleSelectLanguage={handleSelectLanguage} language="es">
               <Flag country="CL" size={22} />
             </MenuItem>
 
-            <MenuItem
-              px={3}
-              borderLeft="solid 2px transparent"
-              _hover={{
-                borderLeftColor: "#7928CA",
-                bg: "none",
-              }}
-              onClick={() => handleSelectLanguage("en")}
-              justifyContent="space-between"
-            >
-              <Text>en</Text>
+            <MenuItem handleSelectLanguage={handleSelectLanguage} language="en">
               <Flag country="US" size={22} />
             </MenuItem>
           </MenuList>

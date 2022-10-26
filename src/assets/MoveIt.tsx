@@ -14,6 +14,7 @@ export function MoveIt() {
     <MoveItImage
       src={moveIt}
       alt="Move It"
+      placeholder="blur"
       borderRadius="10"
       border="1px solid"
       borderColor={colors.divider}

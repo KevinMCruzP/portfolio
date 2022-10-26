@@ -1,4 +1,5 @@
 import {
+  Flex,
   Tooltip as ChakraTooltip,
   TooltipProps as ChakraTooltipProps,
 } from "@chakra-ui/react";
@@ -21,7 +22,7 @@ export function Tooltip({ label, children, ...rest }: TooltipProps) {
       borderColor={colors.tooltipBorder}
       {...rest}
     >
-      {children}
+      <Flex>{children}</Flex>
     </ChakraTooltip>
   );
 }
