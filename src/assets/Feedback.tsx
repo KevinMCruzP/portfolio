@@ -1,18 +1,18 @@
 import { chakra } from "@chakra-ui/react";
 import Image from "next/image";
-import feedback from "../../public/feedback.png";
+import feedbackImg from "../../public/feedback.png";
 import { useColors } from "../hooks/useColors";
 
-export function Feedback() {
+export function FeedbackImg() {
   const { colors } = useColors();
 
-  const FeedbackImg = chakra(Image, {
+  const FeedbackImage = chakra(Image, {
     shouldForwardProp: (prop) => ["src", "alt"].includes(prop),
   });
 
   return (
-    <FeedbackImg
-      src={feedback}
+    <FeedbackImage
+      src={feedbackImg}
       alt="Move It"
       placeholder="blur"
       borderRadius="10"

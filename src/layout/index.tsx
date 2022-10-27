@@ -1,4 +1,5 @@
 import { Flex, useColorMode } from "@chakra-ui/react";
+import { Feedback } from "../components/Feedback";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { useColors } from "../hooks/useColors";
@@ -54,6 +55,9 @@ export function Layout({ children }: LayoutProps) {
               },
             }}
           >
+            <Flex zIndex="1" position="absolute" right="10px" bottom="10px">
+              <Feedback />
+            </Flex>
             {children}
           </Flex>
         </Flex>

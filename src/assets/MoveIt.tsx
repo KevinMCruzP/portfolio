@@ -7,7 +7,8 @@ export function MoveIt() {
   const { colors } = useColors();
 
   const MoveItImage = chakra(Image, {
-    shouldForwardProp: (prop) => ["src", "alt"].includes(prop),
+    shouldForwardProp: (prop) =>
+      ["src", "alt", "placeholder", "blurDataURL"].includes(prop),
   });
 
   return (
@@ -15,6 +16,7 @@ export function MoveIt() {
       src={moveIt}
       alt="Move It"
       placeholder="blur"
+      blurDataURL={moveIt}
       borderRadius="10"
       border="1px solid"
       borderColor={colors.divider}

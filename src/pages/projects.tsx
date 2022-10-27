@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { DashAdmin } from "../assets/DashAdmin";
-import { Feedback } from "../assets/Feedback";
+import { FeedbackImg } from "../assets/Feedback";
 import { MoveIt } from "../assets/MoveIt";
 import { ProjectItem } from "../components/ProjectItem";
 import { useColors } from "../hooks/useColors";
@@ -41,7 +41,7 @@ export default function Projects() {
         title={t("feedBack.title")}
         description={t("feedBack.description")}
         href="https://nlw-return-react.vercel.app/"
-        image={<Feedback />}
+        image={<FeedbackImg />}
       />
     </SimpleGrid>
   );

@@ -39,10 +39,10 @@ export function ColorsProvider({ children }: ColorsProviderProps) {
   const [colors, setColors] = useState({} as Colors);
 
   const bg = useColorModeValue("gray.50", "#050409");
-  const tooltipBg = useColorModeValue("gray.100", "#0c081b");
-  const tooltipBorder = useColorModeValue("gray.200", "#7928CA");
+  const tooltipBg = useColorModeValue("gray.200", "#292730");
+  const tooltipBorder = useColorModeValue("gray.300", "#8257E6");
   const selectLangBorder = useColorModeValue("gray.400", "#2f1e67");
-  const selectLangPlaceholder = useColorModeValue("gray.200", "#7928CA");
+  const selectLangPlaceholder = useColorModeValue("gray.200", "#8257E6");
   const subBg = useColorModeValue("gray.100", "#050409");
   const bgHover = useColorModeValue("white", "gray.800");
   const divider = useColorModeValue("gray.400", "#2f1e67");

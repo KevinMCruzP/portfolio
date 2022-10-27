@@ -3,7 +3,11 @@ import { FiCommand, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiAlienBug } from "react-icons/gi";
 import { GrInstagram } from "react-icons/gr";
 import { IoLogoNodejs, IoRocketSharp } from "react-icons/io5";
-import { RiArrowDownSLine } from "react-icons/ri";
+import {
+  RiArrowDownSLine,
+  RiChatSmile2Line,
+  RiChatSmile3Line,
+} from "react-icons/ri";
 import {
   SiCss3,
   SiGit,
@@ -33,4 +37,6 @@ export const Icons = {
   Linux: SiLinux,
   Git: SiGit,
   Alien: GiAlienBug,
+  SmileIcon: RiChatSmile2Line,
+  SmileIcon2: RiChatSmile3Line,
 };
