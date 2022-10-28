@@ -24,9 +24,14 @@ export function Feedback() {
   const { colors } = useColors();
 
   return (
-    <Popover placement="top-start" onOpen={onOpen} onClose={onClose}>
+    <Popover
+      placement="top-start"
+      orientation="horizontal"
+      onOpen={onOpen}
+      onClose={onClose}
+    >
       <PopoverTrigger>
-        <Flex>
+        <Flex zIndex="1" position="absolute" right="10px" bottom="10px">
           <FeedbackButton isOpen={isOpen} />
         </Flex>
       </PopoverTrigger>
@@ -35,8 +40,9 @@ export function Feedback() {
         borderColor={colors.selectLangBorder}
         bg={colors.subBg}
         borderRadius="20px"
+        w={["250px", "250px", "300px"]}
       >
-        <PopoverHeader fontSize="20px" border="none">
+        <PopoverHeader fontSize={["md", "md", "lg"]} border="none">
           <Text textAlign="center">Deixe seu feedback</Text>
         </PopoverHeader>
         <PopoverArrow />

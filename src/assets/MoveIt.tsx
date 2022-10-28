@@ -3,7 +3,7 @@ import Image from "next/image";
 import moveIt from "../../public/moveit.png";
 import { useColors } from "../hooks/useColors";
 
-export function MoveIt() {
+export function MoveItImg() {
   const { colors } = useColors();
 
   const MoveItImage = chakra(Image, {
@@ -14,7 +14,7 @@ export function MoveIt() {
   return (
     <MoveItImage
       src={moveIt}
-      alt="Move It"
+      alt="Move It page"
       placeholder="blur"
       borderRadius="10"
       border="1px solid"

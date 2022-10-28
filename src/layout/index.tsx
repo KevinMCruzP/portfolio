@@ -55,9 +55,7 @@ export function Layout({ children }: LayoutProps) {
               },
             }}
           >
-            <Flex zIndex="1" position="absolute" right="10px" bottom="10px">
-              <Feedback />
-            </Flex>
+            <Feedback />
             {children}
           </Flex>
         </Flex>

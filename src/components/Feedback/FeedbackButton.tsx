@@ -23,7 +23,7 @@ export function FeedbackButton({ isOpen = false }: FeedbackButtonProps) {
       fontSize={isOpen ? "16px" : "0"}
       _hover={{
         width: "-webkit-max-content",
-        fontSize: "16px",
+        fontSize: { base: "12px", md: "16px" },
         fontWeight: "bold",
         transition: "all 0.3s",
         gap: "4px",
@@ -31,16 +31,16 @@ export function FeedbackButton({ isOpen = false }: FeedbackButtonProps) {
       transition={isOpen ? "none" : "all 0.3s"}
       border="1px solid"
       borderColor={colors.selectLangBorder}
-      color={"gray.50"}
+      color="gray.50"
       fontWeight="bold"
     >
       {isOpen ? (
         <Fade in={isOpen}>
-          <Icons.SmileIcon2 size="30px" />
+          <Icons.SmileIcon2 size="25px" />
         </Fade>
       ) : (
         <Fade in={!isOpen}>
-          <Icons.SmileIcon size="30px" />
+          <Icons.SmileIcon size="25px" />
         </Fade>
       )}
 

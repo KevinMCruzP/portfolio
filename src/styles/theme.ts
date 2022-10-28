@@ -51,9 +51,6 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
-      html: {
-        overflow: "hidden",
-      },
       body: {
         bg: "#050409",
         color: "gray.50",

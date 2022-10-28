@@ -7,13 +7,14 @@ export function FeedbackImg() {
   const { colors } = useColors();
 
   const FeedbackImage = chakra(Image, {
-    shouldForwardProp: (prop) => ["src", "alt"].includes(prop),
+    shouldForwardProp: (prop) =>
+      ["src", "alt", "placeholder", "blurDataURL"].includes(prop),
   });
 
   return (
     <FeedbackImage
       src={feedbackImg}
-      alt="Move It"
+      alt="Feedback page"
       placeholder="blur"
       borderRadius="10"
       border="1px solid"

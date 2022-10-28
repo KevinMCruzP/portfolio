@@ -2,9 +2,9 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { DashAdmin } from "../assets/DashAdmin";
+import { DashAdminImg } from "../assets/DashAdmin";
 import { FeedbackImg } from "../assets/Feedback";
-import { MoveIt } from "../assets/MoveIt";
+import { MoveItImg } from "../assets/MoveIt";
 import { ProjectItem } from "../components/ProjectItem";
 import { useColors } from "../hooks/useColors";
 
@@ -25,7 +25,7 @@ export default function Projects() {
         title={t("dashAdmin.title")}
         description={t("dashAdmin.description")}
         href="https://dashadmin-kevinmcruzp.vercel.app/"
-        image={<DashAdmin />}
+        image={<DashAdminImg />}
       />
 
       {/* //Moveit */}
@@ -33,7 +33,7 @@ export default function Projects() {
         title={t("moveIt.title")}
         description={t("moveIt.description")}
         href="https://moveit-kevinmcruzp.vercel.app/"
-        image={<MoveIt />}
+        image={<MoveItImg />}
       />
 
       {/* //Feedback */}

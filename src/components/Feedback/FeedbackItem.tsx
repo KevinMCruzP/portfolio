@@ -1,4 +1,4 @@
-import { GridItem, Text } from "@chakra-ui/react";
+import { Flex, GridItem, Text } from "@chakra-ui/react";
 import { useColors } from "../../hooks/useColors";
 
 interface FeedbackItemProps {
@@ -12,9 +12,9 @@ export function FeedbackItem({ image, typeFeedback }: FeedbackItemProps) {
     <GridItem
       display="flex"
       flexDir="column"
-      justifyContent="center"
+      alignItems="center"
       bg={colors.tooltipBg}
-      p="25px 8px"
+      p={["12px 4px", "12px 4px", "24px 8px"]}
       gap={2}
       borderRadius="10px"
       cursor="pointer"
@@ -24,7 +24,7 @@ export function FeedbackItem({ image, typeFeedback }: FeedbackItemProps) {
         borderColor: "#8257E6",
       }}
     >
-      {image}
+      <Flex w={["30px", "35px", "40px"]}>{image}</Flex>
       <Text
         textAlign="center"
         fontSize={["sm", "md", "md", "md", "lg"]}
