@@ -17,6 +17,12 @@ export function FeedbackItem({ image, typeFeedback }: FeedbackItemProps) {
       p="25px 8px"
       gap={2}
       borderRadius="10px"
+      cursor="pointer"
+      border="2px solid transparent"
+      _hover={{
+        border: "2px solid",
+        borderColor: "#8257E6",
+      }}
     >
       {image}
       <Text

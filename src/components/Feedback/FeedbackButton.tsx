@@ -11,11 +11,12 @@ export function FeedbackButton({ isOpen = false }: FeedbackButtonProps) {
 
   return (
     <Flex
-      bg={colors.subBg}
+      cursor="pointer"
+      bg="#7928CA"
       overflow="hidden"
       alignItems="center"
       justifyContent="center"
-      gap="2px"
+      gap={isOpen ? "4px" : "0"}
       p="5px"
       borderRadius={isOpen ? "50px" : "full"}
       w={isOpen ? "-webkit-max-content" : "40px"}
@@ -23,12 +24,15 @@ export function FeedbackButton({ isOpen = false }: FeedbackButtonProps) {
       _hover={{
         width: "-webkit-max-content",
         fontSize: "16px",
+        fontWeight: "bold",
         transition: "all 0.3s",
-        borderColor: "#7928CA",
+        gap: "4px",
       }}
       transition={isOpen ? "none" : "all 0.3s"}
       border="1px solid"
       borderColor={colors.selectLangBorder}
+      color={"gray.50"}
+      fontWeight="bold"
     >
       {isOpen ? (
         <Fade in={isOpen}>
