@@ -10,5 +10,9 @@
   "feedBack": {
     "title": "Retroalimentação",
     "description": "Desenho de sistema de retroalimentação de mensagem"
+  },
+  "redditClone": {
+    "title": "Clone do Reddit",
+    "description": "Clone do Reddit com sistema de publicação, inicio de sessão, etc..."
   }
 }

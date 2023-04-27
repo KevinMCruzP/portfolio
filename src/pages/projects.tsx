@@ -5,6 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { DashAdminImg } from "../assets/DashAdmin";
 import { FeedbackImg } from "../assets/Feedback";
 import { MoveItImg } from "../assets/MoveIt";
+import { RedditCloneImg } from "../assets/RedditClone";
 import { ProjectItem } from "../components/ProjectItem";
 import { useColors } from "../hooks/useColors";
 
@@ -42,6 +43,14 @@ export default function Projects() {
         description={t("feedBack.description")}
         href="https://nlw-return-react.vercel.app/"
         image={<FeedbackImg />}
+      />
+
+      {/* //Reddit clone */}
+      <ProjectItem
+        title={t("redditClone.title")}
+        description={t("redditClone.description")}
+        href="https://reddit-clone-nextjs-firebase-gamma.vercel.app/"
+        image={<RedditCloneImg />}
       />
     </SimpleGrid>
   );

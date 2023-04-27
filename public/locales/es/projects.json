@@ -10,5 +10,9 @@
   "feedBack": {
     "title": "Retroalimentación",
     "description": "Diseño de sistema de retroalimentación de mensaje"
+  },
+  "redditClone": {
+    "title": "Clon de Reddit",
+    "description": "Clon de Reddit con sistema de publicación, inicio de sesión, etc..."
   }
 }
