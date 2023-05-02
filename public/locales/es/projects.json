@@ -14,5 +14,9 @@
   "redditClone": {
     "title": "Clon de Reddit",
     "description": "Clon de Reddit con sistema de publicación, inicio de sesión, etc..."
+  },
+  "podcast": {
+    "title": "Podcast",
+    "description": "Diseño de un sistema de podcast, con funcionalidades de play, pause, etc..."
   }
 }

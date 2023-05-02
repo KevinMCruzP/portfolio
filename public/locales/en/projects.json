@@ -14,5 +14,9 @@
   "redditClone": {
     "title": "Reddit Clone",
     "description": "Reddit clone with post system, login, etc..."
+  },
+  "podcast": {
+    "title": "Podcast",
+    "description": "Design of a podcast system, with play, pause, etc..."
   }
 }

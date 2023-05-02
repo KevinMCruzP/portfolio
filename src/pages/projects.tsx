@@ -5,6 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { DashAdminImg } from "../assets/DashAdmin";
 import { FeedbackImg } from "../assets/Feedback";
 import { MoveItImg } from "../assets/MoveIt";
+import { PodcastImg } from "../assets/Podcast";
 import { RedditCloneImg } from "../assets/RedditClone";
 import { ProjectItem } from "../components/ProjectItem";
 import { useColors } from "../hooks/useColors";
@@ -21,7 +22,7 @@ export default function Projects() {
       minChildWidth={["280px", "300px", "320px", "340px"]}
       p={["15px", "30px"]}
     >
-      {/* //Dashadmin */}
+      {/* //DashAdmin */}
       <ProjectItem
         title={t("dashAdmin.title")}
         description={t("dashAdmin.description")}
@@ -29,7 +30,23 @@ export default function Projects() {
         image={<DashAdminImg />}
       />
 
-      {/* //Moveit */}
+      {/* //Reddit clone */}
+      <ProjectItem
+        title={t("redditClone.title")}
+        description={t("redditClone.description")}
+        href="https://reddit-clone-nextjs-firebase-gamma.vercel.app/"
+        image={<RedditCloneImg />}
+      />
+
+      {/* //Podcast */}
+      <ProjectItem
+        title={t("podcast.title")}
+        description={t("podcast.description")}
+        href="https://podcastr-next-kevinmcruzp.vercel.app/"
+        image={<PodcastImg />}
+      />
+
+      {/* //MoveIt */}
       <ProjectItem
         title={t("moveIt.title")}
         description={t("moveIt.description")}
@@ -45,13 +62,7 @@ export default function Projects() {
         image={<FeedbackImg />}
       />
 
-      {/* //Reddit clone */}
-      <ProjectItem
-        title={t("redditClone.title")}
-        description={t("redditClone.description")}
-        href="https://reddit-clone-nextjs-firebase-gamma.vercel.app/"
-        image={<RedditCloneImg />}
-      />
+      
     </SimpleGrid>
   );
 }
