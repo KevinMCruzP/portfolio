@@ -8,6 +8,7 @@ import { Layout } from "../layout";
 import { theme } from "../styles/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  
   return (
     <>
       <Head>

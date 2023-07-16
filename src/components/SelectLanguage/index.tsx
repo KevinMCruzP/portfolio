@@ -1,99 +1,76 @@
-import {
-  Button,
-  Flex,
-  Menu,
-  MenuButton,
-  MenuList,
-  Text,
-  useBreakpointValue,
-} from "@chakra-ui/react";
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import Flag from "react-flagkit";
-import { RiArrowDownSLine } from "react-icons/ri";
-import { useColors } from "../../hooks/useColors";
-import { MenuItem } from "./MenuItem";
+import { Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react'
+import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
+import React from 'react'
+import Flag from 'react-flagkit'
+
+type LanguageProps = 'pt-BR' | 'es' | 'en'
 
 export function SelectLanguage() {
-  const router = useRouter();
-  const { t, i18n } = useTranslation("header");
-  const { colors } = useColors();
-  const [language, setLanguage] = useState<string>(i18n.language);
-  const isPhoneVersion = useBreakpointValue({ base: true, md: false });
+  const router = useRouter()
+  const { i18n } = useTranslation('header')
 
-  function handleSelectLanguage(language: string) {
-    setLanguage(language);
+  const [language, setLanguage] = React.useState(i18n.language as LanguageProps)
 
-    router.push(router.asPath, undefined, { locale: language });
+  function handleSelectLanguage(language: LanguageProps): void {
+    setLanguage(language)
+
+    router.push(router.asPath, undefined, { locale: language })
   }
 
   return (
     <Menu autoSelect={false}>
-      {({ isOpen }) => (
-        <>
-          <MenuButton
-            isActive={isOpen}
-            as={Button}
-            fontSize={15}
-            fontWeight="normal"
-            width="-webkit-max-content"
-            variant="filled"
-            bg={colors.bg}
-            _hover={{
-              borderColor: colors.selectLangPlaceholder,
-            }}
-            border={isPhoneVersion ? "none" : "solid 1px"}
-            borderColor={colors.selectLangBorder}
-            rightIcon={!isPhoneVersion && <RiArrowDownSLine />}
-            size={isPhoneVersion ? "0" : "md"}
-            p={isPhoneVersion ? "0" : "10px"}
-            zIndex="1"
-          >
-            <Flex flexDir="column" gap="5px">
-              {!isPhoneVersion && (
-                <Text align="start" fontSize={10} color={colors.color}>
-                  {t("languages")}
-                </Text>
-              )}
-              <Text align="start">
-                {language === "pt-BR" ? (
-                  <Flag country="BR" size={20} />
-                ) : language === "en" ? (
-                  <Flag country="US" size={20} />
-                ) : (
-                  language === "es" && <Flag country="CL" size={20} />
-                )}
-              </Text>
-            </Flex>
-          </MenuButton>
+      <MenuButton transition= '0.2s filter' _hover={{ filter: 'brightness(1.2)' }}>
+        {language === 'pt-BR' ? <Flag country='BR' size={27} />
+          : language === 'en' ? <Flag country='US' size={27} />
+            : language === 'es' && <Flag country='CL' size={27} />
+        }
+      </MenuButton>
 
-          <MenuList
-            bg={colors.subBg}
-            maxH="260px"
-            minW={["100px", "100px", "150px"]}
-            overflow="auto"
-            fontSize={13}
-            border="solid 1px"
-            borderColor={colors.selectLangBorder}
-          >
-            <MenuItem
-              handleSelectLanguage={handleSelectLanguage}
-              language="pt-BR"
-            >
-              <Flag country="BR" size={22} />
-            </MenuItem>
+      <MenuList bg='#1C1C1C' maxH='260px' overflow='auto' border='1px solid #353646'>
+        <MenuItem onClick={() => handleSelectLanguage('en')}
+          px='5px'
+          borderLeft='3px solid transparent'
+          justifyContent='space-between'
+          fontSize={['sm', 'md', 'md', 'md', 'lg']}
+          _hover={{
+            borderColor: '#FF0000',
+            bg: 'none',
+          }}
+        >
+          <Text>English</Text>
+          <Flag country='US' size={22} />
+        </MenuItem>
 
-            <MenuItem handleSelectLanguage={handleSelectLanguage} language="es">
-              <Flag country="CL" size={22} />
-            </MenuItem>
+        <MenuItem onClick={() => handleSelectLanguage('pt-BR')}
+          px='5px'
+          borderLeft='3px solid transparent'
+          justifyContent='space-between'
+          fontSize={['sm', 'md', 'md', 'md', 'lg']}
+          _hover={{
+            borderColor: '#FF0000',
+            bg: 'none',
+          }}
+        >
+          <Text>Português</Text>
+          <Flag country='BR' size={22} />
+        </MenuItem>
 
-            <MenuItem handleSelectLanguage={handleSelectLanguage} language="en">
-              <Flag country="US" size={22} />
-            </MenuItem>
-          </MenuList>
-        </>
-      )}
+        <MenuItem onClick={() => handleSelectLanguage('es')}
+          px='5px'
+          borderLeft='3px solid transparent'
+          justifyContent='space-between'
+          fontSize={['sm', 'md', 'md', 'md', 'lg']}
+          _hover={{
+            borderColor: '#FF0000',
+            bg: 'none',
+          }}
+        >
+          <Text>Español</Text>
+          <Flag country='CL' size={22} />
+        </MenuItem>
+      </MenuList>
     </Menu>
-  );
+  )
+
 }

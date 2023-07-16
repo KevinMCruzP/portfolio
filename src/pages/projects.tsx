@@ -1,5 +1,5 @@
 import { SimpleGrid } from "@chakra-ui/react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { DashAdminImg } from "../assets/DashAdmin";
@@ -67,7 +67,7 @@ export default function Projects() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       ...(await serverSideTranslations(String(ctx.locale), [

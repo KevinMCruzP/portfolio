@@ -2,12 +2,12 @@ const path = require('path')
 
 module.exports = {
   i18n: {
-    defaultLocale: 'es',
+    defaultLocale: 'en',
     locales: ['es', 'en', 'pt-BR'],
     domains: [
       {
         domain: 'https://kevincruz.vercel.app/',
-        defaultLocale: 'es',
+        defaultLocale: 'en',
       }
     ],
     localeDetection: false,

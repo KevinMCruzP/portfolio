@@ -3,10 +3,11 @@ import {
   MenuItemProps as ChakraMenuItemProps,
   Text,
 } from "@chakra-ui/react";
+import { LanguageProps } from ".";
 
 interface MenuItemProps extends ChakraMenuItemProps {
-  handleSelectLanguage: (language: string) => void;
-  language: string;
+  handleSelectLanguage: (language: LanguageProps) => void;
+  language: LanguageProps;
   children: React.ReactNode;
 }
 
