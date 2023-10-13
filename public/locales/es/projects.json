@@ -18,5 +18,9 @@
   "podcast": {
     "title": "Podcast",
     "description": "Diseño de un sistema de podcast, con funcionalidades de play, pause, etc..."
+  },
+  "messages": {
+    "title": "Mensajes",
+    "description": "Diseño de sistema de mensajería, con funcionalidades de enviar, recibir, etc..."
   }
 }

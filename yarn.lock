@@ -1182,15 +1182,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/swc-linux-x64-gnu@12.2.3":
+"@next/swc-win32-x64-msvc@12.2.3":
   version "12.2.3"
-  resolved "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.2.3.tgz"
-  integrity sha512-MbFI6413VSXiREzHwYD8YAJLTknBaC+bmjXgdHEEdloeOuBFQGE3NWn3izOCTy8kV+s98VDQO8au7EKKs+bW0g==
-
-"@next/swc-linux-x64-musl@12.2.3":
-  version "12.2.3"
-  resolved "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.2.3.tgz"
-  integrity sha512-jMBD0Va6fInbPih/dNySlNY2RpjkK6MXS+UGVEvuTswl1MZr+iahvurmshwGKpjaRwVU4DSFMD8+gfWxsTFs1Q==
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.2.3.tgz"
+  integrity sha512-huSNb98KSG77Kl96CoPgCwom28aamuUsPpRmn/4s9L0RNbbHVSkp9E6HA4yOAykZCEuWcdNsRLbVVuAbt8rtIw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

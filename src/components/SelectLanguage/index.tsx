@@ -3,12 +3,14 @@ import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import React from 'react'
 import Flag from 'react-flagkit'
+import { useColors } from '../../hooks/useColors'
 
 type LanguageProps = 'pt-BR' | 'es' | 'en'
 
 export function SelectLanguage() {
   const router = useRouter()
   const { i18n } = useTranslation('header')
+  const { colors } = useColors()
 
   const [language, setLanguage] = React.useState(i18n.language as LanguageProps)
 
@@ -27,7 +29,7 @@ export function SelectLanguage() {
         }
       </MenuButton>
 
-      <MenuList bg='#1C1C1C' maxH='260px' overflow='auto' border='1px solid #353646'>
+      <MenuList color={colors.color} bg={colors.bg} maxH='260px' overflow='auto' border='1px solid #353646'>
         <MenuItem onClick={() => handleSelectLanguage('en')}
           px='5px'
           borderLeft='3px solid transparent'

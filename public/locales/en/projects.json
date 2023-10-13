@@ -18,5 +18,9 @@
   "podcast": {
     "title": "Podcast",
     "description": "Design of a podcast system, with play, pause, etc..."
+  },
+  "messages": {
+    "title": "Messages",
+    "description": "Design of a message system, with send, delete, etc..."
   }
 }

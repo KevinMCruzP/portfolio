@@ -9,10 +9,9 @@ import { PodcastImg } from "../assets/Podcast";
 import { RedditCloneImg } from "../assets/RedditClone";
 import { ProjectItem } from "../components/ProjectItem";
 import { useColors } from "../hooks/useColors";
+import { MessagesImg } from "../assets/Messages";
 
 export default function Projects() {
-  const { colors } = useColors();
-
   const { t } = useTranslation("projects");
 
   return (
@@ -22,6 +21,14 @@ export default function Projects() {
       minChildWidth={["280px", "300px", "320px", "340px"]}
       p={["15px", "30px"]}
     >
+      {/* //Messages */}
+      <ProjectItem
+        title={t("messages.title")}
+        description={t("messages.description")}
+        href="https://podcastr-next-kevinmcruzp.vercel.app/"
+        image={<MessagesImg />}
+      />
+
       {/* //DashAdmin */}
       <ProjectItem
         title={t("dashAdmin.title")}
