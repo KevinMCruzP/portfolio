@@ -25,7 +25,7 @@ export default function Projects() {
       <ProjectItem
         title={t("messages.title")}
         description={t("messages.description")}
-        href="https://podcastr-next-kevinmcruzp.vercel.app/"
+        href="https://dowhile-messages-reactjs.vercel.app/"
         image={<MessagesImg />}
       />
 
